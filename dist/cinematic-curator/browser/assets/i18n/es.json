@@ -53,6 +53,8 @@
     "switchToCreator": "Cambiar a modo creator",
     "enableCreatorTools": "Activar herramientas creator",
     "creatorDashboard": "Panel creator",
+    "hidden": "Ocultos",
+    "hiddenVideos": "Videos ocultos",
     "account": "Cuenta",
     "profileSettings": "Perfil y ajustes",
     "planBilling": "Plan y facturación",
@@ -60,5 +62,21 @@
     "viewerMode": "Modo viewer",
     "creatorMode": "Modo creator",
     "plan": "plan"
+  },
+  "hidden": {
+    "eyebrow": "Ocultos",
+    "title": "Gestionar videos ocultos",
+    "subtitle": "Reúne aquí los videos que ya no quieres ver en tu experiencia personal y recupéralos cuando quieras.",
+    "hiddenCount": "videos ocultos",
+    "currentlyHiddenLabel": "Ocultos ahora",
+    "currentlyHiddenTitle": "Videos excluidos de tu feed",
+    "addLabel": "Añadir videos",
+    "addTitle": "Elige más videos para ocultar",
+    "addVideo": "Añadir a ocultos",
+    "remove": "Quitar de ocultos",
+    "emptyTitle": "No hay videos ocultos",
+    "emptyDescription": "Cuando ocultes un video de tu espacio personal, aparecerá aquí.",
+    "libraryEmptyTitle": "Todo ya está oculto",
+    "libraryEmptyDescription": "Ahora mismo no hay más videos disponibles para añadir."
   }
 }

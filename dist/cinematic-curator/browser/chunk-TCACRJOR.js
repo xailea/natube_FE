@@ -1,14 +1,15 @@
 import {
-  CreatorContentService,
   SectionHeaderComponent
-} from "./chunk-FKH7C23Y.js";
+} from "./chunk-I6PZV75L.js";
 import {
-  FloatingActionButtonComponent,
+  CreatorContentService
+} from "./chunk-KOEGIJ4S.js";
+import {
   LayoutService,
   MobileNavComponent,
   SideNavComponent,
   TopNavbarComponent
-} from "./chunk-5SL5Y3IF.js";
+} from "./chunk-ZSE2O4B6.js";
 import "./chunk-HALBEQZX.js";
 import {
   ChangeDetectionStrategy,
@@ -342,7 +343,7 @@ _CreatorExplorePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineCompo
       return ctx.onResize();
     }, \u0275\u0275resolveWindow);
   }
-}, decls: 30, vars: 7, consts: [[1, "creator-page"], [1, "creator-page__header"], [1, "creator-page__eyebrow", "text-label"], [1, "page-title", "creator-page__title"], [1, "creator-page__subtitle"], [1, "creator-page__chips"], ["type", "button", 1, "creator-page__chip", 3, "creator-page__chip--active"], [1, "creator-page__hero", "surface-card"], [1, "text-label"], [1, "card-title"], [1, "creator-page__section"], ["title", "Browse By Craft", "accent", "tertiary"], [1, "creator-page__grid"], [1, "creator-page__empty", "surface-card"], ["type", "button", 1, "creator-page__chip", 3, "click"], ["title", "Featured Creators", "accent", "primary"], [1, "creator-page__grid", "creator-page__grid--featured"], [3, "item"], ["title", "Rising Creators", "accent", "secondary"], [1, "material-symbols-outlined"], ["type", "button", 1, "creator-page__reset", 3, "click"]], template: function CreatorExplorePageComponent_Template(rf, ctx) {
+}, decls: 29, vars: 7, consts: [[1, "creator-page"], [1, "creator-page__header"], [1, "creator-page__eyebrow", "text-label"], [1, "page-title", "creator-page__title"], [1, "creator-page__subtitle"], [1, "creator-page__chips"], ["type", "button", 1, "creator-page__chip", 3, "creator-page__chip--active"], [1, "creator-page__hero", "surface-card"], [1, "text-label"], [1, "card-title"], [1, "creator-page__section"], ["title", "Browse By Craft", "accent", "tertiary"], [1, "creator-page__grid"], [1, "creator-page__empty", "surface-card"], ["type", "button", 1, "creator-page__chip", 3, "click"], ["title", "Featured Creators", "accent", "primary"], [1, "creator-page__grid", "creator-page__grid--featured"], [3, "item"], ["title", "Rising Creators", "accent", "secondary"], [1, "material-symbols-outlined"], ["type", "button", 1, "creator-page__reset", 3, "click"]], template: function CreatorExplorePageComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "app-top-navbar")(1, "app-side-nav");
     \u0275\u0275elementStart(2, "main", 0)(3, "header", 1)(4, "div")(5, "p", 2);
@@ -372,7 +373,7 @@ _CreatorExplorePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineCompo
     \u0275\u0275element(25, "app-section-header", 11);
     \u0275\u0275conditionalCreate(26, CreatorExplorePageComponent_Conditional_26_Template, 3, 0, "div", 12)(27, CreatorExplorePageComponent_Conditional_27_Template, 9, 0, "section", 13);
     \u0275\u0275elementEnd()();
-    \u0275\u0275element(28, "app-floating-action-button")(29, "app-mobile-nav");
+    \u0275\u0275element(28, "app-mobile-nav");
   }
   if (rf & 2) {
     \u0275\u0275advance(2);
@@ -388,7 +389,6 @@ _CreatorExplorePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineCompo
   }
 }, dependencies: [
   CreatorCardComponent,
-  FloatingActionButtonComponent,
   MobileNavComponent,
   SectionHeaderComponent,
   SideNavComponent,
@@ -400,7 +400,6 @@ var CreatorExplorePageComponent = _CreatorExplorePageComponent;
     type: Component,
     args: [{ selector: "app-creator-explore-page", standalone: true, imports: [
       CreatorCardComponent,
-      FloatingActionButtonComponent,
       MobileNavComponent,
       SectionHeaderComponent,
       SideNavComponent,
@@ -487,7 +486,6 @@ var CreatorExplorePageComponent = _CreatorExplorePageComponent;
   </section>
 </main>
 
-<app-floating-action-button></app-floating-action-button>
 <app-mobile-nav></app-mobile-nav>
 `, styles: ["/* src/app/features/creator/pages/creator-explore-page.component.scss */\n:host {\n  display: block;\n}\n.creator-page {\n  min-block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 2rem) 2rem 3rem;\n  margin-inline-start: var(--sidebar-width);\n  transition: margin-inline-start 240ms ease;\n}\n.creator-page--collapsed {\n  margin-inline-start: var(--sidebar-collapsed-width);\n}\n.creator-page--mobile {\n  margin-inline-start: 0;\n  padding-inline: 1rem;\n  padding-block-end: 6rem;\n}\n.creator-page__header {\n  margin-bottom: 2rem;\n  display: grid;\n  gap: 1rem;\n}\n.creator-page__eyebrow,\n.creator-page__subtitle {\n  margin: 0;\n}\n.creator-page__eyebrow {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.15em;\n}\n.creator-page__title {\n  margin: 0.35rem 0 0.65rem;\n  font-size: clamp(2.25rem, 5vw, 3.6rem);\n}\n.creator-page__subtitle,\n.creator-page__hero p:last-child,\n.creator-page__empty p {\n  color: var(--color-on-surface-variant);\n  line-height: 1.7;\n}\n.creator-page__chips {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.creator-page__chip {\n  min-block-size: 2.5rem;\n  padding-inline: 0.9rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n  color: var(--color-on-surface-variant);\n  font-weight: 700;\n}\n.creator-page__chip--active {\n  background: rgba(0, 242, 209, 0.12);\n  color: var(--color-secondary);\n}\n.creator-page__hero {\n  margin-bottom: 3rem;\n  padding: 1.5rem;\n}\n.creator-page__hero p,\n.creator-page__hero h2,\n.creator-page__empty h2,\n.creator-page__empty p {\n  margin: 0;\n}\n.creator-page__hero {\n  background:\n    radial-gradient(\n      circle at top right,\n      rgba(76, 214, 251, 0.12),\n      transparent 30%),\n    linear-gradient(\n      180deg,\n      rgba(255, 255, 255, 0.02),\n      rgba(255, 255, 255, 0.01));\n}\n.creator-page__section {\n  margin-bottom: 3rem;\n}\n.creator-page__grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 1.25rem;\n}\n.creator-page__grid--featured {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n.creator-page__empty {\n  padding: 2rem;\n  display: grid;\n  justify-items: start;\n  gap: 0.75rem;\n}\n.creator-page__empty .material-symbols-outlined {\n  color: var(--color-primary);\n  font-size: 2rem;\n}\n.creator-page__reset {\n  min-block-size: 2.8rem;\n  padding-inline: 1rem;\n  border-radius: var(--radius-pill);\n  background: var(--color-primary);\n  color: var(--color-on-primary-container);\n  font-weight: 800;\n}\n@media (max-width: 1199px) {\n  .creator-page__grid,\n  .creator-page__grid--featured {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n@media (max-width: 767px) {\n  .creator-page {\n    margin-inline-start: 0;\n  }\n  .creator-page__grid,\n  .creator-page__grid--featured {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=creator-explore-page.component.css.map */\n"] }]
   }], () => [], { onResize: [{
@@ -496,9 +494,9 @@ var CreatorExplorePageComponent = _CreatorExplorePageComponent;
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CreatorExplorePageComponent, { className: "CreatorExplorePageComponent", filePath: "src/app/features/creator/pages/creator-explore-page.component.ts", lineNumber: 35 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CreatorExplorePageComponent, { className: "CreatorExplorePageComponent", filePath: "src/app/features/creator/pages/creator-explore-page.component.ts", lineNumber: 33 });
 })();
 export {
   CreatorExplorePageComponent
 };
-//# sourceMappingURL=chunk-QESXCOER.js.map
+//# sourceMappingURL=chunk-TCACRJOR.js.map

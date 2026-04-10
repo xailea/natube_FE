@@ -48,6 +48,18 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'hidden',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/hidden/pages/hidden-page.component').then(
+        (m) => m.HiddenPageComponent
+      ),
+    data: {
+      title: 'Nascosti',
+      description: 'Manage the videos hidden from your personal experience.'
+    }
+  },
+  {
     path: 'upload',
     canActivate: [authGuard],
     loadComponent: () =>

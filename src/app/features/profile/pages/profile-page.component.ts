@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 import { AuthModalService } from '../../../core/services/auth-modal.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { LayoutService } from '../../../core/services/layout.service';
-import { FloatingActionButtonComponent } from '../../../layout/floating-action-button/floating-action-button.component';
 import { MobileNavComponent } from '../../../layout/mobile-nav/mobile-nav.component';
 import { SideNavComponent } from '../../../layout/side-nav/side-nav.component';
 import { TopNavbarComponent } from '../../../layout/top-navbar/top-navbar.component';
@@ -18,7 +17,7 @@ import { TopNavbarComponent } from '../../../layout/top-navbar/top-navbar.compon
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [FloatingActionButtonComponent, MobileNavComponent, SideNavComponent, TopNavbarComponent],
+  imports: [MobileNavComponent, SideNavComponent, TopNavbarComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

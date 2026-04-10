@@ -53,6 +53,8 @@
     "switchToCreator": "Passa alla modalità creator",
     "enableCreatorTools": "Attiva strumenti creator",
     "creatorDashboard": "Dashboard creator",
+    "hidden": "Nascosti",
+    "hiddenVideos": "Video nascosti",
     "account": "Account",
     "profileSettings": "Profilo e impostazioni",
     "planBilling": "Piano e fatturazione",
@@ -60,5 +62,21 @@
     "viewerMode": "Modalità viewer",
     "creatorMode": "Modalità creator",
     "plan": "piano"
+  },
+  "hidden": {
+    "eyebrow": "Nascosti",
+    "title": "Gestisci i video nascosti",
+    "subtitle": "Raccogli qui i video che non vuoi più vedere nel tuo percorso personale e riattivali quando vuoi.",
+    "hiddenCount": "video nascosti",
+    "currentlyHiddenLabel": "Ora nascosti",
+    "currentlyHiddenTitle": "Video esclusi dal tuo feed",
+    "addLabel": "Aggiungi video",
+    "addTitle": "Scegli altri video da nascondere",
+    "addVideo": "Aggiungi ai nascosti",
+    "remove": "Rimuovi dai nascosti",
+    "emptyTitle": "Nessun video nascosto",
+    "emptyDescription": "Quando nascondi un video dal tuo spazio personale, comparirà qui.",
+    "libraryEmptyTitle": "Hai già nascosto tutto",
+    "libraryEmptyDescription": "Non ci sono altri video disponibili da aggiungere in questo momento."
   }
 }

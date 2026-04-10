@@ -13,7 +13,6 @@ import { AuthService } from '../../../core/services/auth.service';
 import { CreatorContentService } from '../../../core/services/creator-content.service';
 import { LayoutService } from '../../../core/services/layout.service';
 import { FeaturedVideoCardComponent } from '../../../shared/featured-video-card/featured-video-card.component';
-import { FloatingActionButtonComponent } from '../../../layout/floating-action-button/floating-action-button.component';
 import { MobileNavComponent } from '../../../layout/mobile-nav/mobile-nav.component';
 import { SectionHeaderComponent } from '../../../shared/section-header/section-header.component';
 import { SideNavComponent } from '../../../layout/side-nav/side-nav.component';
@@ -27,7 +26,6 @@ type HomeSort = 'for-you' | 'newest' | 'unwatched';
   standalone: true,
   imports: [
     FeaturedVideoCardComponent,
-    FloatingActionButtonComponent,
     MobileNavComponent,
     SectionHeaderComponent,
     SideNavComponent,

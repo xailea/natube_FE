@@ -12,7 +12,6 @@ import { VideoCardModel } from '../../../core/models/content.models';
 import { CreatorContentService } from '../../../core/services/creator-content.service';
 import { LayoutService } from '../../../core/services/layout.service';
 import { FeaturedVideoCardComponent } from '../../../shared/featured-video-card/featured-video-card.component';
-import { FloatingActionButtonComponent } from '../../../layout/floating-action-button/floating-action-button.component';
 import { MobileNavComponent } from '../../../layout/mobile-nav/mobile-nav.component';
 import { SectionHeaderComponent } from '../../../shared/section-header/section-header.component';
 import { ShortCardComponent } from '../../../shared/short-card/short-card.component';
@@ -25,7 +24,6 @@ import { VideoCardComponent } from '../../../shared/video-card/video-card.compon
   standalone: true,
   imports: [
     FeaturedVideoCardComponent,
-    FloatingActionButtonComponent,
     MobileNavComponent,
     SectionHeaderComponent,
     ShortCardComponent,

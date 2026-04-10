@@ -11,7 +11,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { CreatorContentService } from '../../../core/services/creator-content.service';
 import { LayoutService } from '../../../core/services/layout.service';
 import { CreatorCardComponent } from '../../../shared/creator-card/creator-card.component';
-import { FloatingActionButtonComponent } from '../../../layout/floating-action-button/floating-action-button.component';
 import { MobileNavComponent } from '../../../layout/mobile-nav/mobile-nav.component';
 import { SectionHeaderComponent } from '../../../shared/section-header/section-header.component';
 import { SideNavComponent } from '../../../layout/side-nav/side-nav.component';
@@ -22,7 +21,6 @@ import { TopNavbarComponent } from '../../../layout/top-navbar/top-navbar.compon
   standalone: true,
   imports: [
     CreatorCardComponent,
-    FloatingActionButtonComponent,
     MobileNavComponent,
     SectionHeaderComponent,
     SideNavComponent,

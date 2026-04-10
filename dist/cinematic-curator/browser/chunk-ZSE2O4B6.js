@@ -92,55 +92,6 @@ var LayoutService = _LayoutService;
   }], null, null);
 })();
 
-// src/app/layout/floating-action-button/floating-action-button.component.ts
-var _FloatingActionButtonComponent = class _FloatingActionButtonComponent {
-  constructor() {
-    this.router = inject(Router);
-    this.authModal = inject(AuthModalService);
-    this.auth = inject(AuthService);
-  }
-  handleUploadClick() {
-    if (!this.auth.isAuthenticated()) {
-      const intent = {
-        kind: "upload",
-        title: "Sign in to upload your first video",
-        description: "Join Cinematic Curator to publish videos, build your channel, and unlock creator tools.",
-        redirectUrl: "/upload",
-        preferredMode: "signin"
-      };
-      this.auth.setPendingIntent(intent);
-      this.authModal.openForIntent(intent);
-      return;
-    }
-    this.auth.enableCreatorMode();
-    void this.router.navigateByUrl("/upload");
-  }
-};
-_FloatingActionButtonComponent.\u0275fac = function FloatingActionButtonComponent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || _FloatingActionButtonComponent)();
-};
-_FloatingActionButtonComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FloatingActionButtonComponent, selectors: [["app-floating-action-button"]], decls: 3, vars: 0, consts: [["type", "button", "aria-label", "Upload new content", 1, "floating-action-button", 3, "click"], [1, "material-symbols-outlined"]], template: function FloatingActionButtonComponent_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275domElementStart(0, "button", 0);
-    \u0275\u0275domListener("click", function FloatingActionButtonComponent_Template_button_click_0_listener() {
-      return ctx.handleUploadClick();
-    });
-    \u0275\u0275domElementStart(1, "span", 1);
-    \u0275\u0275text(2, "add");
-    \u0275\u0275domElementEnd()();
-  }
-}, styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n}\n.floating-action-button[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-inline-end: 2rem;\n  inset-block-end: 2rem;\n  z-index: 45;\n  inline-size: 3.5rem;\n  block-size: 3.5rem;\n  border-radius: 50%;\n  display: grid;\n  place-items: center;\n  background: var(--color-primary-container);\n  color: var(--color-on-primary-container);\n  box-shadow: var(--shadow-fab);\n  transition: transform 180ms ease;\n}\n.floating-action-button[_ngcontent-%COMP%]:hover {\n  transform: scale(1.06);\n}\n@media (max-width: 767px) {\n  .floating-action-button[_ngcontent-%COMP%] {\n    inset-inline-end: 1rem;\n    inset-block-end: 5rem;\n  }\n}\n/*# sourceMappingURL=floating-action-button.component.css.map */"], changeDetection: 0 });
-var FloatingActionButtonComponent = _FloatingActionButtonComponent;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FloatingActionButtonComponent, [{
-    type: Component,
-    args: [{ selector: "app-floating-action-button", standalone: true, imports: [], changeDetection: ChangeDetectionStrategy.OnPush, template: '<button\n  type="button"\n  class="floating-action-button"\n  aria-label="Upload new content"\n  (click)="handleUploadClick()">\n  <span class="material-symbols-outlined">add</span>\n</button>\n', styles: ["/* src/app/layout/floating-action-button/floating-action-button.component.scss */\n:host {\n  display: block;\n}\n.floating-action-button {\n  position: fixed;\n  inset-inline-end: 2rem;\n  inset-block-end: 2rem;\n  z-index: 45;\n  inline-size: 3.5rem;\n  block-size: 3.5rem;\n  border-radius: 50%;\n  display: grid;\n  place-items: center;\n  background: var(--color-primary-container);\n  color: var(--color-on-primary-container);\n  box-shadow: var(--shadow-fab);\n  transition: transform 180ms ease;\n}\n.floating-action-button:hover {\n  transform: scale(1.06);\n}\n@media (max-width: 767px) {\n  .floating-action-button {\n    inset-inline-end: 1rem;\n    inset-block-end: 5rem;\n  }\n}\n/*# sourceMappingURL=floating-action-button.component.css.map */\n"] }]
-  }], null, null);
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FloatingActionButtonComponent, { className: "FloatingActionButtonComponent", filePath: "src/app/layout/floating-action-button/floating-action-button.component.ts", lineNumber: 14 });
-})();
-
 // src/app/layout/mobile-nav/mobile-nav.component.ts
 var _c0 = (a0) => ({ exact: a0 });
 var _forTrack0 = ($index, $item) => $item.route;
@@ -560,33 +511,46 @@ function UserDropdownComponent_Conditional_1_Template(rf, ctx) {
     \u0275\u0275text(42);
     \u0275\u0275pipe(43, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(44, "app-language-switcher", 10);
-    \u0275\u0275elementStart(45, "a", 7);
-    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_a_click_45_listener() {
+    \u0275\u0275elementStart(44, "a", 10);
+    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_a_click_44_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onNavigate());
     });
-    \u0275\u0275text(46);
-    \u0275\u0275pipe(47, "translate");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(48, "a", 7);
-    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_a_click_48_listener() {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.onNavigate());
-    });
+    \u0275\u0275text(45);
+    \u0275\u0275pipe(46, "translate");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(47, "div", 5)(48, "p", 6);
     \u0275\u0275text(49);
     \u0275\u0275pipe(50, "translate");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(51, "button", 11);
-    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_button_click_51_listener() {
+    \u0275\u0275element(51, "app-language-switcher", 11);
+    \u0275\u0275elementStart(52, "a", 7);
+    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_a_click_52_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.onNavigate());
+    });
+    \u0275\u0275text(53);
+    \u0275\u0275pipe(54, "translate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(55, "a", 7);
+    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_a_click_55_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.onNavigate());
+    });
+    \u0275\u0275text(56);
+    \u0275\u0275pipe(57, "translate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(58, "button", 12);
+    \u0275\u0275listener("click", function UserDropdownComponent_Conditional_1_Template_button_click_58_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.logoutUser.emit());
     });
-    \u0275\u0275text(52);
-    \u0275\u0275pipe(53, "translate");
+    \u0275\u0275text(59);
+    \u0275\u0275pipe(60, "translate");
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -599,33 +563,37 @@ function UserDropdownComponent_Conditional_1_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(user_r3.email);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate3(" ", user_r3.plan, " ", \u0275\u0275pipeBind1(9, 20, "dropdown.plan"), " \xB7 ", ctx_r1.auth.role() === "creator" ? \u0275\u0275pipeBind1(10, 22, "dropdown.creatorMode") : \u0275\u0275pipeBind1(11, 24, "dropdown.viewerMode"), " ");
+    \u0275\u0275textInterpolate3(" ", user_r3.plan, " ", \u0275\u0275pipeBind1(9, 22, "dropdown.plan"), " \xB7 ", ctx_r1.auth.role() === "creator" ? \u0275\u0275pipeBind1(10, 24, "dropdown.creatorMode") : \u0275\u0275pipeBind1(11, 26, "dropdown.viewerMode"), " ");
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(15, 26, "dropdown.content"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(15, 28, "dropdown.content"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(18, 28, "dropdown.yourChannel"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(18, 30, "dropdown.yourChannel"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(21, 30, "dropdown.yourVideos"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(21, 32, "dropdown.yourVideos"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(24, 32, "dropdown.playlists"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(24, 34, "dropdown.playlists"));
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(28, 34, "dropdown.creator"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(28, 36, "dropdown.creator"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(31, 36, "dropdown.uploadVideo"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(31, 38, "dropdown.uploadVideo"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", ctx_r1.auth.isCreator() ? ctx_r1.auth.role() === "creator" ? \u0275\u0275pipeBind1(34, 38, "dropdown.switchToViewer") : \u0275\u0275pipeBind1(35, 40, "dropdown.switchToCreator") : \u0275\u0275pipeBind1(36, 42, "dropdown.enableCreatorTools"), " ");
+    \u0275\u0275textInterpolate1(" ", ctx_r1.auth.isCreator() ? ctx_r1.auth.role() === "creator" ? \u0275\u0275pipeBind1(34, 40, "dropdown.switchToViewer") : \u0275\u0275pipeBind1(35, 42, "dropdown.switchToCreator") : \u0275\u0275pipeBind1(36, 44, "dropdown.enableCreatorTools"), " ");
     \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(39, 44, "dropdown.creatorDashboard"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(39, 46, "dropdown.creatorDashboard"));
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(43, 46, "dropdown.account"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(43, 48, "dropdown.hidden"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(46, 50, "dropdown.hiddenVideos"));
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(50, 52, "dropdown.account"));
     \u0275\u0275advance(2);
     \u0275\u0275property("compact", true);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(47, 48, "dropdown.profileSettings"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(54, 54, "dropdown.profileSettings"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(50, 50, "dropdown.planBilling"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(57, 56, "dropdown.planBilling"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind1(53, 52, "dropdown.signOut"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind1(60, 58, "dropdown.signOut"), " ");
   }
 }
 var _UserDropdownComponent = class _UserDropdownComponent {
@@ -643,10 +611,10 @@ var _UserDropdownComponent = class _UserDropdownComponent {
 _UserDropdownComponent.\u0275fac = function UserDropdownComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _UserDropdownComponent)();
 };
-_UserDropdownComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UserDropdownComponent, selectors: [["app-user-dropdown"]], outputs: { closeMenu: "closeMenu", upload: "upload", toggleCreatorMode: "toggleCreatorMode", logoutUser: "logoutUser" }, decls: 2, vars: 1, consts: [["aria-label", "User menu", 1, "user-dropdown", "surface-card"], [1, "user-dropdown__header"], [3, "src", "alt"], [1, "user-dropdown__name"], [1, "user-dropdown__meta"], [1, "user-dropdown__section"], [1, "user-dropdown__label", "text-label"], ["routerLink", "/profile", 3, "click"], ["type", "button", 3, "click"], ["routerLink", "/creator", 3, "click"], [3, "compact"], ["type", "button", 1, "user-dropdown__danger", 3, "click"]], template: function UserDropdownComponent_Template(rf, ctx) {
+_UserDropdownComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _UserDropdownComponent, selectors: [["app-user-dropdown"]], outputs: { closeMenu: "closeMenu", upload: "upload", toggleCreatorMode: "toggleCreatorMode", logoutUser: "logoutUser" }, decls: 2, vars: 1, consts: [["aria-label", "User menu", 1, "user-dropdown", "surface-card"], [1, "user-dropdown__header"], [3, "src", "alt"], [1, "user-dropdown__name"], [1, "user-dropdown__meta"], [1, "user-dropdown__section"], [1, "user-dropdown__label", "text-label"], ["routerLink", "/profile", 3, "click"], ["type", "button", 3, "click"], ["routerLink", "/creator", 3, "click"], ["routerLink", "/hidden", 3, "click"], [3, "compact"], ["type", "button", 1, "user-dropdown__danger", 3, "click"]], template: function UserDropdownComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "section", 0);
-    \u0275\u0275conditionalCreate(1, UserDropdownComponent_Conditional_1_Template, 54, 54);
+    \u0275\u0275conditionalCreate(1, UserDropdownComponent_Conditional_1_Template, 61, 60);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -694,6 +662,11 @@ var UserDropdownComponent = _UserDropdownComponent;
         }}
       </button>
       <a routerLink="/creator" (click)="onNavigate()">{{ 'dropdown.creatorDashboard' | translate }}</a>
+    </div>
+
+    <div class="user-dropdown__section">
+      <p class="user-dropdown__label text-label">{{ 'dropdown.hidden' | translate }}</p>
+      <a routerLink="/hidden" (click)="onNavigate()">{{ 'dropdown.hiddenVideos' | translate }}</a>
     </div>
 
     <div class="user-dropdown__section">
@@ -1124,9 +1097,8 @@ var TopNavbarComponent = _TopNavbarComponent;
 
 export {
   LayoutService,
-  FloatingActionButtonComponent,
   MobileNavComponent,
   SideNavComponent,
   TopNavbarComponent
 };
-//# sourceMappingURL=chunk-5SL5Y3IF.js.map
+//# sourceMappingURL=chunk-ZSE2O4B6.js.map

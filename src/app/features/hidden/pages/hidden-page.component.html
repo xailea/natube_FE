@@ -1,0 +1,114 @@
+<app-top-navbar></app-top-navbar>
+<app-side-nav></app-side-nav>
+
+<main
+  class="hidden-page"
+  [class.hidden-page--collapsed]="layout.sidebarCollapsed()"
+  [class.hidden-page--mobile]="layout.isMobile()">
+  <header class="hidden-page__hero surface-card">
+    <div>
+      <p class="hidden-page__eyebrow text-label">{{ 'hidden.eyebrow' | translate }}</p>
+      <h1 class="page-title hidden-page__title">{{ 'hidden.title' | translate }}</h1>
+      <p class="hidden-page__subtitle">{{ 'hidden.subtitle' | translate }}</p>
+    </div>
+
+    <div class="hidden-page__stats">
+      <span class="material-symbols-outlined">visibility_off</span>
+      <div>
+        <p class="hidden-page__stat-value">{{ hiddenCount() }}</p>
+        <p class="hidden-page__stat-label">{{ 'hidden.hiddenCount' | translate }}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="hidden-page__section">
+    <div class="hidden-page__section-head">
+      <div>
+        <p class="text-label">{{ 'hidden.currentlyHiddenLabel' | translate }}</p>
+        <h2 class="card-title">{{ 'hidden.currentlyHiddenTitle' | translate }}</h2>
+      </div>
+    </div>
+
+    @if (hiddenVideos.hiddenVideos().length > 0) {
+      <div class="hidden-page__grid">
+        @for (video of hiddenVideos.hiddenVideos(); track video.id) {
+          <article class="hidden-page__card surface-card">
+            <img
+              class="hidden-page__image"
+              [src]="video.thumbnailUrl"
+              [alt]="video.title"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer" />
+
+            <div class="hidden-page__content">
+              <div>
+                <p class="text-label">{{ video.category }}</p>
+                <h3 class="card-title">{{ video.title }}</h3>
+                <p class="hidden-page__meta">{{ video.creator.name }} · {{ video.duration }}</p>
+              </div>
+
+              <button
+                type="button"
+                class="hidden-page__button hidden-page__button--secondary"
+                (click)="removeVideo(video.id)">
+                {{ 'hidden.remove' | translate }}
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <section class="hidden-page__empty surface-card">
+        <span class="material-symbols-outlined">video_library</span>
+        <h2 class="card-title">{{ 'hidden.emptyTitle' | translate }}</h2>
+        <p>{{ 'hidden.emptyDescription' | translate }}</p>
+      </section>
+    }
+  </section>
+
+  <section class="hidden-page__section">
+    <div class="hidden-page__section-head">
+      <div>
+        <p class="text-label">{{ 'hidden.addLabel' | translate }}</p>
+        <h2 class="card-title">{{ 'hidden.addTitle' | translate }}</h2>
+      </div>
+    </div>
+
+    @if (hiddenVideos.availableVideos().length > 0) {
+      <div class="hidden-page__grid">
+        @for (video of hiddenVideos.availableVideos(); track video.id) {
+          <article class="hidden-page__card surface-card">
+            <img
+              class="hidden-page__image"
+              [src]="video.thumbnailUrl"
+              [alt]="video.title"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer" />
+
+            <div class="hidden-page__content">
+              <div>
+                <p class="text-label">{{ video.category }}</p>
+                <h3 class="card-title">{{ video.title }}</h3>
+                <p class="hidden-page__meta">{{ video.creator.name }} · {{ video.duration }}</p>
+              </div>
+
+              <button type="button" class="hidden-page__button" (click)="addVideo(video.id)">
+                {{ 'hidden.addVideo' | translate }}
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <section class="hidden-page__empty surface-card">
+        <span class="material-symbols-outlined">task_alt</span>
+        <h2 class="card-title">{{ 'hidden.libraryEmptyTitle' | translate }}</h2>
+        <p>{{ 'hidden.libraryEmptyDescription' | translate }}</p>
+      </section>
+    }
+  </section>
+</main>
+
+<app-mobile-nav></app-mobile-nav>

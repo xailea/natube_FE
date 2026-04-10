@@ -53,6 +53,8 @@
     "switchToCreator": "Zum Creator-Modus wechseln",
     "enableCreatorTools": "Creator-Tools aktivieren",
     "creatorDashboard": "Creator-Dashboard",
+    "hidden": "Ausgeblendet",
+    "hiddenVideos": "Ausgeblendete Videos",
     "account": "Konto",
     "profileSettings": "Profil und Einstellungen",
     "planBilling": "Plan und Abrechnung",
@@ -60,5 +62,21 @@
     "viewerMode": "Viewer-Modus",
     "creatorMode": "Creator-Modus",
     "plan": "Plan"
+  },
+  "hidden": {
+    "eyebrow": "Ausgeblendet",
+    "title": "Ausgeblendete Videos verwalten",
+    "subtitle": "Sammle hier Videos, die du in deiner persönlichen Erfahrung nicht mehr sehen möchtest, und stelle sie jederzeit wieder her.",
+    "hiddenCount": "ausgeblendete Videos",
+    "currentlyHiddenLabel": "Derzeit ausgeblendet",
+    "currentlyHiddenTitle": "Videos außerhalb deines Feeds",
+    "addLabel": "Videos hinzufügen",
+    "addTitle": "Weitere Videos zum Ausblenden auswählen",
+    "addVideo": "Zu ausgeblendet hinzufügen",
+    "remove": "Aus ausgeblendet entfernen",
+    "emptyTitle": "Keine ausgeblendeten Videos",
+    "emptyDescription": "Wenn du ein Video aus deinem persönlichen Bereich ausblendest, erscheint es hier.",
+    "libraryEmptyTitle": "Alles ist bereits ausgeblendet",
+    "libraryEmptyDescription": "Im Moment sind keine weiteren Videos zum Hinzufügen verfügbar."
   }
 }

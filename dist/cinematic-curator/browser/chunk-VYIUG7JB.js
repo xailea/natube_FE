@@ -3,16 +3,17 @@ import {
   VideoCardComponent
 } from "./chunk-UIQ66MXL.js";
 import {
-  CreatorContentService,
   SectionHeaderComponent
-} from "./chunk-FKH7C23Y.js";
+} from "./chunk-I6PZV75L.js";
 import {
-  FloatingActionButtonComponent,
+  CreatorContentService
+} from "./chunk-KOEGIJ4S.js";
+import {
   LayoutService,
   MobileNavComponent,
   SideNavComponent,
   TopNavbarComponent
-} from "./chunk-5SL5Y3IF.js";
+} from "./chunk-ZSE2O4B6.js";
 import {
   AuthService,
   TranslatePipe
@@ -303,7 +304,7 @@ _HomePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ typ
       return ctx.onResize();
     }, \u0275\u0275resolveWindow);
   }
-}, decls: 21, vars: 14, consts: [[1, "home-page"], [1, "home-page__header"], [1, "home-page__heading"], [1, "home-page__eyebrow", "text-label"], [1, "page-title", "home-page__title"], [1, "home-page__subtitle"], ["role", "tablist", "aria-label", "Home feed filters", 1, "home-page__sorts"], ["type", "button", "role", "tab", 1, "home-page__tab", 3, "home-page__tab--active"], ["type", "button", "role", "tab", 1, "home-page__tab", 3, "click"], [1, "home-page__tab-badge"], [1, "home-page__guest", "surface-card"], [1, "home-page__guest-copy"], [1, "card-title"], [1, "home-page__genre-row"], [1, "home-page__genre-pill"], [1, "home-page__guest-feature"], [3, "item"], [1, "home-page__section"], ["accent", "primary", 3, "title"], [1, "home-page__creator-grid"], [1, "home-page__creator-card", "surface-card"], [3, "src", "alt"], ["accent", "tertiary", 3, "title"], [1, "home-page__video-grid", "home-page__video-grid--three"], [1, "home-page__feed"], [1, "home-page__hero-slot"], ["accent", "secondary", 3, "title"], [1, "home-page__digest"], [1, "home-page__digest-card", "surface-card"], [1, "text-label"]], template: function HomePageComponent_Template(rf, ctx) {
+}, decls: 20, vars: 14, consts: [[1, "home-page"], [1, "home-page__header"], [1, "home-page__heading"], [1, "home-page__eyebrow", "text-label"], [1, "page-title", "home-page__title"], [1, "home-page__subtitle"], ["role", "tablist", "aria-label", "Home feed filters", 1, "home-page__sorts"], ["type", "button", "role", "tab", 1, "home-page__tab", 3, "home-page__tab--active"], ["type", "button", "role", "tab", 1, "home-page__tab", 3, "click"], [1, "home-page__tab-badge"], [1, "home-page__guest", "surface-card"], [1, "home-page__guest-copy"], [1, "card-title"], [1, "home-page__genre-row"], [1, "home-page__genre-pill"], [1, "home-page__guest-feature"], [3, "item"], [1, "home-page__section"], ["accent", "primary", 3, "title"], [1, "home-page__creator-grid"], [1, "home-page__creator-card", "surface-card"], [3, "src", "alt"], ["accent", "tertiary", 3, "title"], [1, "home-page__video-grid", "home-page__video-grid--three"], [1, "home-page__feed"], [1, "home-page__hero-slot"], ["accent", "secondary", 3, "title"], [1, "home-page__digest"], [1, "home-page__digest-card", "surface-card"], [1, "text-label"]], template: function HomePageComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "app-top-navbar")(1, "app-side-nav");
     \u0275\u0275elementStart(2, "main", 0)(3, "header", 1)(4, "div", 2)(5, "p", 3);
@@ -323,7 +324,7 @@ _HomePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ typ
     \u0275\u0275elementEnd()();
     \u0275\u0275conditionalCreate(17, HomePageComponent_Conditional_17_Template, 22, 13)(18, HomePageComponent_Conditional_18_Template, 20, 10);
     \u0275\u0275elementEnd();
-    \u0275\u0275element(19, "app-floating-action-button")(20, "app-mobile-nav");
+    \u0275\u0275element(19, "app-mobile-nav");
   }
   if (rf & 2) {
     \u0275\u0275advance(2);
@@ -341,7 +342,6 @@ _HomePageComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ typ
   }
 }, dependencies: [
   FeaturedVideoCardComponent,
-  FloatingActionButtonComponent,
   MobileNavComponent,
   SectionHeaderComponent,
   SideNavComponent,
@@ -355,7 +355,6 @@ var HomePageComponent = _HomePageComponent;
     type: Component,
     args: [{ selector: "app-home-page", standalone: true, imports: [
       FeaturedVideoCardComponent,
-      FloatingActionButtonComponent,
       MobileNavComponent,
       SectionHeaderComponent,
       SideNavComponent,
@@ -462,7 +461,6 @@ var HomePageComponent = _HomePageComponent;
   }
 </main>
 
-<app-floating-action-button></app-floating-action-button>
 <app-mobile-nav></app-mobile-nav>
 `, styles: ['/* src/app/features/home/pages/home-page.component.scss */\n:host {\n  display: block;\n}\n.home-page {\n  min-block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 2rem) 2rem 3rem;\n  margin-inline-start: var(--sidebar-width);\n  transition: margin-inline-start 240ms ease;\n}\n.home-page--collapsed {\n  margin-inline-start: var(--sidebar-collapsed-width);\n}\n.home-page--mobile {\n  margin-inline-start: 0;\n  padding-inline: 1rem;\n  padding-block-end: 6rem;\n}\n.home-page__header {\n  margin-bottom: 2.5rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: end;\n  gap: 1.25rem;\n  flex-wrap: wrap;\n}\n.home-page__heading {\n  display: grid;\n  gap: 0;\n}\n.home-page__eyebrow,\n.home-page__subtitle {\n  margin: 0;\n}\n.home-page__eyebrow {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.14em;\n}\n.home-page__title {\n  margin: 0.35rem 0 0.6rem;\n  font-size: clamp(2.2rem, 5vw, 3.4rem);\n}\n.home-page__subtitle {\n  max-inline-size: 44rem;\n  color: var(--color-on-surface-variant);\n  line-height: 1.7;\n}\n.home-page__sorts,\n.home-page__genre-row {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.home-page__genre-pill {\n  min-block-size: 2.5rem;\n  padding-inline: 0.9rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  font-weight: 700;\n}\n.home-page__genre-pill {\n  background: rgba(76, 214, 251, 0.12);\n  color: var(--color-tertiary);\n}\n.home-page__sorts {\n  min-block-size: 2.5rem;\n  padding: 0.25rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n  gap: 0.25rem;\n}\n.home-page__tab {\n  min-block-size: 2rem;\n  padding-inline: 0.85rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  gap: 0.5rem;\n  color: var(--color-on-surface-variant);\n  font: 700 0.9rem/1 "Inter", sans-serif;\n  transition: background-color 160ms ease, color 160ms ease;\n}\n.home-page__tab:hover {\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-on-surface);\n}\n.home-page__tab:focus-visible {\n  outline: 2px solid rgba(76, 214, 251, 0.42);\n  outline-offset: 2px;\n}\n.home-page__tab--active {\n  background: rgba(76, 214, 251, 0.16);\n  color: var(--color-tertiary);\n}\n.home-page__tab-badge {\n  min-inline-size: 1.25rem;\n  min-block-size: 1.25rem;\n  padding-inline: 0.3rem;\n  border-radius: var(--radius-pill);\n  display: grid;\n  place-items: center;\n  background: rgba(255, 255, 255, 0.08);\n  color: currentColor;\n  font-size: 0.72rem;\n}\n.home-page__guest {\n  padding: 1.5rem;\n  margin-bottom: 2.5rem;\n  display: grid;\n  grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);\n  gap: 1.5rem;\n  align-items: center;\n}\n.home-page__guest-copy h2,\n.home-page__guest-copy p,\n.home-page__creator-card p,\n.home-page__digest-card p,\n.home-page__digest-card h3 {\n  margin: 0;\n}\n.home-page__guest-copy {\n  display: grid;\n  gap: 1rem;\n}\n.home-page__guest-copy > p:last-of-type,\n.home-page__creator-card p:last-child,\n.home-page__digest-card p:last-child {\n  color: var(--color-on-surface-variant);\n  line-height: 1.6;\n}\n.home-page__section {\n  margin-bottom: 3rem;\n}\n.home-page__creator-grid,\n.home-page__digest {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 1rem;\n}\n.home-page__creator-card,\n.home-page__digest-card {\n  padding: 1rem;\n  display: grid;\n  gap: 0.75rem;\n}\n.home-page__creator-card {\n  grid-template-columns: 3rem 1fr;\n  align-items: center;\n}\n.home-page__creator-card img {\n  inline-size: 3rem;\n  block-size: 3rem;\n  border-radius: 50%;\n  object-fit: cover;\n}\n.home-page__video-grid--three {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 1rem;\n}\n.home-page__feed {\n  display: grid;\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 1.5rem;\n}\n.home-page__hero-slot {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n@media (max-width: 1199px) {\n  .home-page__guest,\n  .home-page__creator-grid,\n  .home-page__digest,\n  .home-page__video-grid--three,\n  .home-page__feed {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .home-page__hero-slot {\n    grid-column: span 2;\n  }\n}\n@media (max-width: 767px) {\n  .home-page {\n    margin-inline-start: 0;\n  }\n  .home-page__guest,\n  .home-page__creator-grid,\n  .home-page__digest,\n  .home-page__video-grid--three,\n  .home-page__feed {\n    grid-template-columns: 1fr;\n  }\n  .home-page__hero-slot {\n    grid-column: auto;\n    grid-row: auto;\n  }\n}\n/*# sourceMappingURL=home-page.component.css.map */\n'] }]
   }], () => [], { onResize: [{
@@ -471,9 +469,9 @@ var HomePageComponent = _HomePageComponent;
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HomePageComponent, { className: "HomePageComponent", filePath: "src/app/features/home/pages/home-page.component.ts", lineNumber: 42 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HomePageComponent, { className: "HomePageComponent", filePath: "src/app/features/home/pages/home-page.component.ts", lineNumber: 40 });
 })();
 export {
   HomePageComponent
 };
-//# sourceMappingURL=chunk-XTLVNG37.js.map
+//# sourceMappingURL=chunk-VYIUG7JB.js.map
