@@ -98,6 +98,11 @@ export class AuthModalComponent {
       }
 
       void this.router.navigateByUrl(pendingIntent.redirectUrl);
+      return;
+    }
+
+    if (pendingIntent?.kind === 'upgrade-plan') {
+      this.auth.upgradeToPro();
     }
   }
 }

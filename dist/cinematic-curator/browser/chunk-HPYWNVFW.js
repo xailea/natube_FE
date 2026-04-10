@@ -39881,6 +39881,7 @@ export {
   ɵɵlistener,
   ɵɵdomListener,
   ɵɵnextContext,
+  ɵɵstyleProp,
   ɵɵclassProp,
   ɵɵtext,
   ɵɵtextInterpolate,
@@ -39891,6 +39892,7 @@ export {
   ɵɵpureFunction1,
   ɵɵpipe,
   ɵɵpipeBind1,
+  ɵɵpipeBind2,
   ɵsetClassDebugInfo,
   Directive,
   Component,
@@ -39904,6 +39906,7 @@ export {
   ChangeDetectorRef,
   booleanAttribute,
   getDOM,
+  DatePipe,
   isPlatformBrowser,
   bootstrapApplication,
   HttpBackend,
@@ -39966,4 +39969,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-VWYUV7GB.js.map
+//# sourceMappingURL=chunk-HPYWNVFW.js.map

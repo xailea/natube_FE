@@ -2,11 +2,13 @@ import {
   AuthModalService,
   AuthService,
   LanguageService,
+  PlanModalService,
   TranslatePipe
-} from "./chunk-HALBEQZX.js";
+} from "./chunk-ISP6ZPZC.js";
 import {
   ChangeDetectionStrategy,
   Component,
+  DatePipe,
   ElementRef,
   EventEmitter,
   HostListener,
@@ -40,6 +42,7 @@ import {
   ɵɵnextContext,
   ɵɵpipe,
   ɵɵpipeBind1,
+  ɵɵpipeBind2,
   ɵɵproperty,
   ɵɵpureFunction1,
   ɵɵrepeater,
@@ -49,11 +52,12 @@ import {
   ɵɵresolveDocument,
   ɵɵrestoreView,
   ɵɵsanitizeUrl,
+  ɵɵstyleProp,
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵtextInterpolate3
-} from "./chunk-VWYUV7GB.js";
+} from "./chunk-HPYWNVFW.js";
 
 // src/app/core/services/layout.service.ts
 var _LayoutService = class _LayoutService {
@@ -162,13 +166,13 @@ var _c02 = (a0) => ({ exact: a0 });
 var _forTrack02 = ($index, $item) => $item.route;
 function SideNavComponent_For_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 5)(1, "span", 11);
+    \u0275\u0275elementStart(0, "a", 5)(1, "span", 8);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span", 12);
+    \u0275\u0275elementStart(3, "span", 9);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 13);
+    \u0275\u0275elementStart(5, "span", 10);
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()();
   }
@@ -185,20 +189,106 @@ function SideNavComponent_For_8_Template(rf, ctx) {
     \u0275\u0275textInterpolate(item_r1.label);
   }
 }
+function SideNavComponent_Conditional_9_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0);
+    \u0275\u0275pipe(1, "date");
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(1, 1, ctx_r1.planRenewalDate(), "dd MMM"), " ");
+  }
+}
+function SideNavComponent_Conditional_9_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, " Attivo ");
+  }
+}
+function SideNavComponent_Conditional_9_Conditional_10_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0);
+    \u0275\u0275pipe(1, "date");
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275textInterpolate1(" Rinnovo ", \u0275\u0275pipeBind2(1, 1, ctx_r1.planRenewalDate(), "dd MMM yyyy"), " ");
+  }
+}
+function SideNavComponent_Conditional_9_Conditional_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, " Stato piano attivo ");
+  }
+}
+function SideNavComponent_Conditional_9_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 6)(1, "div", 11)(2, "p", 12);
+    \u0275\u0275text(3, "PRO PLAN");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span", 13);
+    \u0275\u0275conditionalCreate(5, SideNavComponent_Conditional_9_Conditional_5_Template, 2, 4)(6, SideNavComponent_Conditional_9_Conditional_6_Template, 1, 0);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(7, "div", 14);
+    \u0275\u0275element(8, "span", 15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "p", 16);
+    \u0275\u0275conditionalCreate(10, SideNavComponent_Conditional_9_Conditional_10_Template, 2, 4)(11, SideNavComponent_Conditional_9_Conditional_11_Template, 1, 0);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(5);
+    \u0275\u0275conditional(ctx_r1.planRenewalDate() ? 5 : 6);
+    \u0275\u0275advance(3);
+    \u0275\u0275styleProp("inline-size", ctx_r1.planUsage(), "%");
+    \u0275\u0275advance(2);
+    \u0275\u0275conditional(ctx_r1.planRenewalDate() ? 10 : 11);
+  }
+}
+function SideNavComponent_Conditional_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 17);
+    \u0275\u0275listener("click", function SideNavComponent_Conditional_10_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.openPlanDetails());
+    });
+    \u0275\u0275elementStart(1, "p", 12);
+    \u0275\u0275text(2, "FREE PLAN");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "p", 16);
+    \u0275\u0275text(4, "Vedi limiti e vantaggi del piano Pro");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "span", 18);
+    \u0275\u0275text(6, "Dettagli piano");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275attribute("aria-label", "Apri dettagli piano Free");
+  }
+}
 var _SideNavComponent = class _SideNavComponent {
   constructor() {
     this.layout = inject(LayoutService);
+    this.auth = inject(AuthService);
+    this.planModal = inject(PlanModalService);
     this.navItems = [
       { label: "Home", icon: "home", route: "/home" },
       { label: "Explora", icon: "explore", route: "/explore" },
       { label: "Creators", icon: "movie_filter", route: "/creator" }
     ];
+    this.activePlan = computed(() => this.auth.user()?.plan ?? "Free", ...ngDevMode ? [{ debugName: "activePlan" }] : []);
+    this.planRenewalDate = computed(() => this.auth.user()?.planRenewalDate ?? null, ...ngDevMode ? [{ debugName: "planRenewalDate" }] : []);
+    this.planUsage = computed(() => this.activePlan() === "Pro" ? 66 : 0, ...ngDevMode ? [{ debugName: "planUsage" }] : []);
+  }
+  openPlanDetails() {
+    this.planModal.open();
   }
 };
 _SideNavComponent.\u0275fac = function SideNavComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _SideNavComponent)();
 };
-_SideNavComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SideNavComponent, selectors: [["app-side-nav"]], decls: 16, vars: 3, consts: [[1, "side-nav"], [1, "side-nav__header"], [1, "side-nav__title"], [1, "side-nav__subtitle"], ["aria-label", "Primary navigation", 1, "side-nav__menu"], ["routerLinkActive", "side-nav__item--active", 1, "side-nav__item", 3, "routerLink", "routerLinkActiveOptions"], [1, "side-nav__promo", "surface-card"], [1, "side-nav__promo-label"], [1, "side-nav__progress"], [1, "side-nav__progress-fill"], ["type", "button", 1, "side-nav__promo-action"], [1, "material-symbols-outlined"], [1, "nav-label"], [1, "side-nav__tooltip"]], template: function SideNavComponent_Template(rf, ctx) {
+_SideNavComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SideNavComponent, selectors: [["app-side-nav"]], decls: 11, vars: 4, consts: [[1, "side-nav"], [1, "side-nav__header"], [1, "side-nav__title"], [1, "side-nav__subtitle"], ["aria-label", "Primary navigation", 1, "side-nav__menu"], ["routerLinkActive", "side-nav__item--active", 1, "side-nav__item", 3, "routerLink", "routerLinkActiveOptions"], [1, "side-nav__promo", "surface-card"], ["type", "button", 1, "side-nav__promo", "side-nav__promo--free", "surface-card"], [1, "material-symbols-outlined"], [1, "nav-label"], [1, "side-nav__tooltip"], [1, "side-nav__promo-head"], [1, "side-nav__promo-label"], [1, "side-nav__promo-status"], [1, "side-nav__progress"], [1, "side-nav__progress-fill"], [1, "side-nav__promo-copy"], ["type", "button", 1, "side-nav__promo", "side-nav__promo--free", "surface-card", 3, "click"], [1, "side-nav__promo-action"]], template: function SideNavComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "aside", 0)(1, "div", 1)(2, "h2", 2);
     \u0275\u0275text(3, "Library");
@@ -209,28 +299,23 @@ _SideNavComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type
     \u0275\u0275elementStart(6, "nav", 4);
     \u0275\u0275repeaterCreate(7, SideNavComponent_For_8_Template, 7, 9, "a", 5, _forTrack02);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "div", 6)(10, "p", 7);
-    \u0275\u0275text(11, "PRO PLAN");
+    \u0275\u0275conditionalCreate(9, SideNavComponent_Conditional_9_Template, 12, 4, "div", 6)(10, SideNavComponent_Conditional_10_Template, 7, 1, "button", 7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "div", 8);
-    \u0275\u0275element(13, "span", 9);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "button", 10);
-    \u0275\u0275text(15, "Upgrade Now");
-    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     \u0275\u0275classProp("side-nav--collapsed", ctx.layout.sidebarCollapsed());
     \u0275\u0275attribute("aria-hidden", ctx.layout.isMobile());
     \u0275\u0275advance(7);
     \u0275\u0275repeater(ctx.navItems);
+    \u0275\u0275advance(2);
+    \u0275\u0275conditional(ctx.activePlan() === "Pro" ? 9 : 10);
   }
-}, dependencies: [RouterLink, RouterLinkActive], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n}\n.side-nav[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n  z-index: 40;\n  inline-size: var(--sidebar-width);\n  block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 1rem) 1rem 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  background: var(--color-surface-container-low);\n  border-inline-end: 1px solid rgba(172, 135, 143, 0.12);\n  transition: inline-size 240ms ease;\n}\n.side-nav--collapsed[_ngcontent-%COMP%] {\n  inline-size: var(--sidebar-collapsed-width);\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__title[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__subtitle[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .nav-label[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__promo[_ngcontent-%COMP%] {\n  display: none;\n}\n.side-nav__header[_ngcontent-%COMP%] {\n  padding-inline: 0.5rem;\n}\n.side-nav__title[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--color-primary);\n  font: 800 1.15rem/1.2 "Plus Jakarta Sans", sans-serif;\n  letter-spacing: -0.03em;\n}\n.side-nav__subtitle[_ngcontent-%COMP%] {\n  margin: 0.35rem 0 0;\n  color: rgba(229, 188, 197, 0.75);\n  font: 600 0.7rem/1.2 "Inter", sans-serif;\n  text-transform: uppercase;\n  letter-spacing: 0.18em;\n}\n.side-nav__menu[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.5rem;\n}\n.side-nav__item[_ngcontent-%COMP%] {\n  position: relative;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  gap: 0.85rem;\n  color: rgba(229, 226, 225, 0.82);\n  cursor: pointer;\n  transition: background-color 180ms ease, color 180ms ease;\n}\n.side-nav__item[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-secondary);\n}\n.side-nav__item--active[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-primary);\n  border-inline-start: 4px solid var(--color-primary-container);\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%] {\n  justify-content: center;\n  padding-inline: 0;\n}\n.side-nav__tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  inset-inline-start: calc(100% + 0.75rem);\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  padding: 0.45rem 0.7rem;\n  border-radius: 999px;\n  background: rgba(17, 15, 18, 0.96);\n  color: var(--color-on-surface);\n  font: 600 0.78rem/1 "Inter", sans-serif;\n  white-space: nowrap;\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 180ms ease, transform 180ms ease;\n}\n.side-nav[_ngcontent-%COMP%]:not(.side-nav--collapsed)   .side-nav__tooltip[_ngcontent-%COMP%] {\n  display: none;\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%]:hover   .side-nav__tooltip[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%]:focus-visible   .side-nav__tooltip[_ngcontent-%COMP%] {\n  opacity: 1;\n  transform: translateY(-50%) translateX(0.15rem);\n}\n.side-nav__promo[_ngcontent-%COMP%] {\n  margin-top: auto;\n  padding: 1rem;\n}\n.side-nav__promo-label[_ngcontent-%COMP%] {\n  margin: 0 0 0.75rem;\n  color: rgba(229, 188, 197, 0.75);\n  font: 700 0.7rem/1 "Inter", sans-serif;\n  letter-spacing: 0.12em;\n}\n.side-nav__progress[_ngcontent-%COMP%] {\n  inline-size: 100%;\n  block-size: 0.35rem;\n  background: var(--color-surface-container-highest);\n  border-radius: var(--radius-pill);\n  overflow: hidden;\n  margin-bottom: 0.85rem;\n}\n.side-nav__progress-fill[_ngcontent-%COMP%] {\n  display: block;\n  inline-size: 66%;\n  block-size: 100%;\n  background: var(--color-tertiary);\n}\n.side-nav__promo-action[_ngcontent-%COMP%] {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.8rem/1 "Inter", sans-serif;\n}\n@media (max-width: 767px) {\n  .side-nav[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=side-nav.component.css.map */'], changeDetection: 0 });
+}, dependencies: [RouterLink, RouterLinkActive, DatePipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n}\n.side-nav[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n  z-index: 40;\n  inline-size: var(--sidebar-width);\n  block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 1rem) 1rem 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  background: var(--color-surface-container-low);\n  border-inline-end: 1px solid rgba(172, 135, 143, 0.12);\n  transition: inline-size 240ms ease;\n}\n.side-nav--collapsed[_ngcontent-%COMP%] {\n  inline-size: var(--sidebar-collapsed-width);\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__title[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__subtitle[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .nav-label[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__promo[_ngcontent-%COMP%] {\n  display: none;\n}\n.side-nav__header[_ngcontent-%COMP%] {\n  padding-inline: 0.5rem;\n}\n.side-nav__title[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--color-primary);\n  font: 800 1.15rem/1.2 "Plus Jakarta Sans", sans-serif;\n  letter-spacing: -0.03em;\n}\n.side-nav__subtitle[_ngcontent-%COMP%] {\n  margin: 0.35rem 0 0;\n  color: rgba(229, 188, 197, 0.75);\n  font: 600 0.7rem/1.2 "Inter", sans-serif;\n  text-transform: uppercase;\n  letter-spacing: 0.18em;\n}\n.side-nav__menu[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.5rem;\n}\n.side-nav__item[_ngcontent-%COMP%] {\n  position: relative;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  gap: 0.85rem;\n  color: rgba(229, 226, 225, 0.82);\n  cursor: pointer;\n  transition: background-color 180ms ease, color 180ms ease;\n}\n.side-nav__item[_ngcontent-%COMP%]:hover {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-secondary);\n}\n.side-nav__item--active[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-primary);\n  border-inline-start: 4px solid var(--color-primary-container);\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%] {\n  justify-content: center;\n  padding-inline: 0;\n}\n.side-nav__tooltip[_ngcontent-%COMP%] {\n  position: absolute;\n  inset-inline-start: calc(100% + 0.75rem);\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  padding: 0.45rem 0.7rem;\n  border-radius: 999px;\n  background: rgba(17, 15, 18, 0.96);\n  color: var(--color-on-surface);\n  font: 600 0.78rem/1 "Inter", sans-serif;\n  white-space: nowrap;\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 180ms ease, transform 180ms ease;\n}\n.side-nav[_ngcontent-%COMP%]:not(.side-nav--collapsed)   .side-nav__tooltip[_ngcontent-%COMP%] {\n  display: none;\n}\n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%]:hover   .side-nav__tooltip[_ngcontent-%COMP%], \n.side-nav--collapsed[_ngcontent-%COMP%]   .side-nav__item[_ngcontent-%COMP%]:focus-visible   .side-nav__tooltip[_ngcontent-%COMP%] {\n  opacity: 1;\n  transform: translateY(-50%) translateX(0.15rem);\n}\n.side-nav__promo[_ngcontent-%COMP%] {\n  margin-top: auto;\n  padding: 1rem;\n}\n.side-nav__promo-head[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 0.75rem;\n}\n.side-nav__promo-label[_ngcontent-%COMP%] {\n  margin: 0 0 0.75rem;\n  color: rgba(229, 188, 197, 0.75);\n  font: 700 0.7rem/1 "Inter", sans-serif;\n  letter-spacing: 0.12em;\n}\n.side-nav__promo-status[_ngcontent-%COMP%], \n.side-nav__promo-copy[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.side-nav__promo-status[_ngcontent-%COMP%] {\n  padding: 0.25rem 0.5rem;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-tertiary);\n  font: 700 0.72rem/1 "Inter", sans-serif;\n}\n.side-nav__progress[_ngcontent-%COMP%] {\n  inline-size: 100%;\n  block-size: 0.35rem;\n  background: var(--color-surface-container-highest);\n  border-radius: var(--radius-pill);\n  overflow: hidden;\n  margin-bottom: 0.85rem;\n}\n.side-nav__progress-fill[_ngcontent-%COMP%] {\n  display: block;\n  inline-size: 66%;\n  block-size: 100%;\n  background: var(--color-tertiary);\n}\n.side-nav__promo-action[_ngcontent-%COMP%] {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.8rem/1 "Inter", sans-serif;\n}\n.side-nav__promo-copy[_ngcontent-%COMP%] {\n  margin-bottom: 0.85rem;\n  color: var(--color-on-surface-variant);\n  font-size: 0.82rem;\n  line-height: 1.5;\n}\n.side-nav__promo--free[_ngcontent-%COMP%] {\n  border: 1px solid rgba(76, 214, 251, 0.16);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(76, 214, 251, 0.08),\n      rgba(255, 255, 255, 0.03));\n  text-align: start;\n  cursor: pointer;\n  transition: transform 180ms ease, border-color 180ms ease;\n}\n.side-nav__promo--free[_ngcontent-%COMP%]:hover {\n  transform: translateY(-1px);\n  border-color: rgba(76, 214, 251, 0.3);\n}\n@media (max-width: 767px) {\n  .side-nav[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=side-nav.component.css.map */'], changeDetection: 0 });
 var SideNavComponent = _SideNavComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SideNavComponent, [{
     type: Component,
-    args: [{ selector: "app-side-nav", standalone: true, imports: [RouterLink, RouterLinkActive], changeDetection: ChangeDetectionStrategy.OnPush, template: `<aside
+    args: [{ selector: "app-side-nav", standalone: true, imports: [RouterLink, RouterLinkActive, DatePipe], changeDetection: ChangeDetectionStrategy.OnPush, template: `<aside
   class="side-nav"
   [class.side-nav--collapsed]="layout.sidebarCollapsed()"
   [attr.aria-hidden]="layout.isMobile()"
@@ -257,19 +342,46 @@ var SideNavComponent = _SideNavComponent;
     }
   </nav>
 
-  <div class="side-nav__promo surface-card">
-    <p class="side-nav__promo-label">PRO PLAN</p>
-    <div class="side-nav__progress">
-      <span class="side-nav__progress-fill"></span>
+  @if (activePlan() === 'Pro') {
+    <div class="side-nav__promo surface-card">
+      <div class="side-nav__promo-head">
+        <p class="side-nav__promo-label">PRO PLAN</p>
+        <span class="side-nav__promo-status">
+          @if (planRenewalDate()) {
+            {{ planRenewalDate() | date: 'dd MMM' }}
+          } @else {
+            Attivo
+          }
+        </span>
+      </div>
+      <div class="side-nav__progress">
+        <span class="side-nav__progress-fill" [style.inline-size.%]="planUsage()"></span>
+      </div>
+      <p class="side-nav__promo-copy">
+        @if (planRenewalDate()) {
+          Rinnovo {{ planRenewalDate() | date: 'dd MMM yyyy' }}
+        } @else {
+          Stato piano attivo
+        }
+      </p>
     </div>
-    <button type="button" class="side-nav__promo-action">Upgrade Now</button>
-  </div>
+  } @else {
+    <button
+      type="button"
+      class="side-nav__promo side-nav__promo--free surface-card"
+      (click)="openPlanDetails()"
+      [attr.aria-label]="'Apri dettagli piano Free'">
+      <p class="side-nav__promo-label">FREE PLAN</p>
+      <p class="side-nav__promo-copy">Vedi limiti e vantaggi del piano Pro</p>
+      <span class="side-nav__promo-action">Dettagli piano</span>
+    </button>
+  }
 </aside>
-`, styles: ['/* src/app/layout/side-nav/side-nav.component.scss */\n:host {\n  display: block;\n}\n.side-nav {\n  position: fixed;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n  z-index: 40;\n  inline-size: var(--sidebar-width);\n  block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 1rem) 1rem 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  background: var(--color-surface-container-low);\n  border-inline-end: 1px solid rgba(172, 135, 143, 0.12);\n  transition: inline-size 240ms ease;\n}\n.side-nav--collapsed {\n  inline-size: var(--sidebar-collapsed-width);\n}\n.side-nav--collapsed .side-nav__title,\n.side-nav--collapsed .side-nav__subtitle,\n.side-nav--collapsed .nav-label,\n.side-nav--collapsed .side-nav__promo {\n  display: none;\n}\n.side-nav__header {\n  padding-inline: 0.5rem;\n}\n.side-nav__title {\n  margin: 0;\n  color: var(--color-primary);\n  font: 800 1.15rem/1.2 "Plus Jakarta Sans", sans-serif;\n  letter-spacing: -0.03em;\n}\n.side-nav__subtitle {\n  margin: 0.35rem 0 0;\n  color: rgba(229, 188, 197, 0.75);\n  font: 600 0.7rem/1.2 "Inter", sans-serif;\n  text-transform: uppercase;\n  letter-spacing: 0.18em;\n}\n.side-nav__menu {\n  display: grid;\n  gap: 0.5rem;\n}\n.side-nav__item {\n  position: relative;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  gap: 0.85rem;\n  color: rgba(229, 226, 225, 0.82);\n  cursor: pointer;\n  transition: background-color 180ms ease, color 180ms ease;\n}\n.side-nav__item:hover {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-secondary);\n}\n.side-nav__item--active {\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-primary);\n  border-inline-start: 4px solid var(--color-primary-container);\n}\n.side-nav--collapsed .side-nav__item {\n  justify-content: center;\n  padding-inline: 0;\n}\n.side-nav__tooltip {\n  position: absolute;\n  inset-inline-start: calc(100% + 0.75rem);\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  padding: 0.45rem 0.7rem;\n  border-radius: 999px;\n  background: rgba(17, 15, 18, 0.96);\n  color: var(--color-on-surface);\n  font: 600 0.78rem/1 "Inter", sans-serif;\n  white-space: nowrap;\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 180ms ease, transform 180ms ease;\n}\n.side-nav:not(.side-nav--collapsed) .side-nav__tooltip {\n  display: none;\n}\n.side-nav--collapsed .side-nav__item:hover .side-nav__tooltip,\n.side-nav--collapsed .side-nav__item:focus-visible .side-nav__tooltip {\n  opacity: 1;\n  transform: translateY(-50%) translateX(0.15rem);\n}\n.side-nav__promo {\n  margin-top: auto;\n  padding: 1rem;\n}\n.side-nav__promo-label {\n  margin: 0 0 0.75rem;\n  color: rgba(229, 188, 197, 0.75);\n  font: 700 0.7rem/1 "Inter", sans-serif;\n  letter-spacing: 0.12em;\n}\n.side-nav__progress {\n  inline-size: 100%;\n  block-size: 0.35rem;\n  background: var(--color-surface-container-highest);\n  border-radius: var(--radius-pill);\n  overflow: hidden;\n  margin-bottom: 0.85rem;\n}\n.side-nav__progress-fill {\n  display: block;\n  inline-size: 66%;\n  block-size: 100%;\n  background: var(--color-tertiary);\n}\n.side-nav__promo-action {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.8rem/1 "Inter", sans-serif;\n}\n@media (max-width: 767px) {\n  .side-nav {\n    display: none;\n  }\n}\n/*# sourceMappingURL=side-nav.component.css.map */\n'] }]
+`, styles: ['/* src/app/layout/side-nav/side-nav.component.scss */\n:host {\n  display: block;\n}\n.side-nav {\n  position: fixed;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n  z-index: 40;\n  inline-size: var(--sidebar-width);\n  block-size: 100vh;\n  padding: calc(var(--top-nav-height) + 1rem) 1rem 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n  background: var(--color-surface-container-low);\n  border-inline-end: 1px solid rgba(172, 135, 143, 0.12);\n  transition: inline-size 240ms ease;\n}\n.side-nav--collapsed {\n  inline-size: var(--sidebar-collapsed-width);\n}\n.side-nav--collapsed .side-nav__title,\n.side-nav--collapsed .side-nav__subtitle,\n.side-nav--collapsed .nav-label,\n.side-nav--collapsed .side-nav__promo {\n  display: none;\n}\n.side-nav__header {\n  padding-inline: 0.5rem;\n}\n.side-nav__title {\n  margin: 0;\n  color: var(--color-primary);\n  font: 800 1.15rem/1.2 "Plus Jakarta Sans", sans-serif;\n  letter-spacing: -0.03em;\n}\n.side-nav__subtitle {\n  margin: 0.35rem 0 0;\n  color: rgba(229, 188, 197, 0.75);\n  font: 600 0.7rem/1.2 "Inter", sans-serif;\n  text-transform: uppercase;\n  letter-spacing: 0.18em;\n}\n.side-nav__menu {\n  display: grid;\n  gap: 0.5rem;\n}\n.side-nav__item {\n  position: relative;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border-radius: var(--radius-md);\n  display: flex;\n  align-items: center;\n  gap: 0.85rem;\n  color: rgba(229, 226, 225, 0.82);\n  cursor: pointer;\n  transition: background-color 180ms ease, color 180ms ease;\n}\n.side-nav__item:hover {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-secondary);\n}\n.side-nav__item--active {\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-primary);\n  border-inline-start: 4px solid var(--color-primary-container);\n}\n.side-nav--collapsed .side-nav__item {\n  justify-content: center;\n  padding-inline: 0;\n}\n.side-nav__tooltip {\n  position: absolute;\n  inset-inline-start: calc(100% + 0.75rem);\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  padding: 0.45rem 0.7rem;\n  border-radius: 999px;\n  background: rgba(17, 15, 18, 0.96);\n  color: var(--color-on-surface);\n  font: 600 0.78rem/1 "Inter", sans-serif;\n  white-space: nowrap;\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 180ms ease, transform 180ms ease;\n}\n.side-nav:not(.side-nav--collapsed) .side-nav__tooltip {\n  display: none;\n}\n.side-nav--collapsed .side-nav__item:hover .side-nav__tooltip,\n.side-nav--collapsed .side-nav__item:focus-visible .side-nav__tooltip {\n  opacity: 1;\n  transform: translateY(-50%) translateX(0.15rem);\n}\n.side-nav__promo {\n  margin-top: auto;\n  padding: 1rem;\n}\n.side-nav__promo-head {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 0.75rem;\n}\n.side-nav__promo-label {\n  margin: 0 0 0.75rem;\n  color: rgba(229, 188, 197, 0.75);\n  font: 700 0.7rem/1 "Inter", sans-serif;\n  letter-spacing: 0.12em;\n}\n.side-nav__promo-status,\n.side-nav__promo-copy {\n  margin: 0;\n}\n.side-nav__promo-status {\n  padding: 0.25rem 0.5rem;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.06);\n  color: var(--color-tertiary);\n  font: 700 0.72rem/1 "Inter", sans-serif;\n}\n.side-nav__progress {\n  inline-size: 100%;\n  block-size: 0.35rem;\n  background: var(--color-surface-container-highest);\n  border-radius: var(--radius-pill);\n  overflow: hidden;\n  margin-bottom: 0.85rem;\n}\n.side-nav__progress-fill {\n  display: block;\n  inline-size: 66%;\n  block-size: 100%;\n  background: var(--color-tertiary);\n}\n.side-nav__promo-action {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.8rem/1 "Inter", sans-serif;\n}\n.side-nav__promo-copy {\n  margin-bottom: 0.85rem;\n  color: var(--color-on-surface-variant);\n  font-size: 0.82rem;\n  line-height: 1.5;\n}\n.side-nav__promo--free {\n  border: 1px solid rgba(76, 214, 251, 0.16);\n  background:\n    linear-gradient(\n      180deg,\n      rgba(76, 214, 251, 0.08),\n      rgba(255, 255, 255, 0.03));\n  text-align: start;\n  cursor: pointer;\n  transition: transform 180ms ease, border-color 180ms ease;\n}\n.side-nav__promo--free:hover {\n  transform: translateY(-1px);\n  border-color: rgba(76, 214, 251, 0.3);\n}\n@media (max-width: 767px) {\n  .side-nav {\n    display: none;\n  }\n}\n/*# sourceMappingURL=side-nav.component.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SideNavComponent, { className: "SideNavComponent", filePath: "src/app/layout/side-nav/side-nav.component.ts", lineNumber: 14 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SideNavComponent, { className: "SideNavComponent", filePath: "src/app/layout/side-nav/side-nav.component.ts", lineNumber: 17 });
 })();
 
 // src/app/core/services/search.service.ts
@@ -1107,4 +1219,4 @@ export {
   SideNavComponent,
   TopNavbarComponent
 };
-//# sourceMappingURL=chunk-2NOT4U2W.js.map
+//# sourceMappingURL=chunk-TUBWDZ5T.js.map

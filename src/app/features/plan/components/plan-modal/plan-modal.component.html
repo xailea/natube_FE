@@ -1,0 +1,60 @@
+@if (modal.state().isOpen) {
+  <div class="plan-modal-backdrop" (click)="close()"></div>
+
+  <section
+    class="plan-modal surface-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="plan-modal-title">
+    <button type="button" class="plan-modal__close icon-button" aria-label="Close plan modal" (click)="close()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="plan-modal__hero">
+      <div>
+        <p class="text-label plan-modal__eyebrow">Membership</p>
+        <h2 id="plan-modal-title" class="page-title plan-modal__title">Confronta Free e Pro</h2>
+        <p class="plan-modal__description">
+          Tutti gli utenti iniziano dal piano Free. Passa a Pro per sbloccare upload illimitati, 4K e strumenti avanzati.
+        </p>
+      </div>
+
+      <div class="plan-modal__status">
+        <span class="plan-modal__status-badge" [class.plan-modal__status-badge--pro]="currentPlan() === 'Pro'">
+          {{ currentPlan() === 'Pro' ? 'PRO PLAN' : 'FREE PLAN' }}
+        </span>
+        @if (auth.user()?.plan === 'Pro' && auth.user()?.planRenewalDate) {
+          <p>Rinnovo {{ auth.user()?.planRenewalDate | date: 'dd MMM yyyy' }}</p>
+        } @else if (auth.user()?.plan === 'Pro') {
+          <p>Attivo</p>
+        } @else {
+          <p>Upgrade disponibile</p>
+        }
+      </div>
+    </div>
+
+    <div class="plan-modal__comparison">
+      <div class="plan-modal__columns plan-modal__columns--head text-label">
+        <span>Feature</span>
+        <span>Free</span>
+        <span>Pro</span>
+      </div>
+
+      @for (feature of modal.features; track feature.label) {
+        <div class="plan-modal__columns">
+          <span class="plan-modal__feature">{{ feature.label }}</span>
+          <span>{{ feature.free }}</span>
+          <span class="plan-modal__pro-value">{{ feature.pro }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="plan-modal__actions">
+      @if (auth.user()?.plan === 'Pro') {
+        <button type="button" class="plan-modal__secondary" (click)="goToProfile()">Vai al profilo</button>
+      } @else {
+        <button type="button" class="plan-modal__primary" (click)="handlePrimaryAction()">Passa a Pro</button>
+      }
+    </div>
+  </section>
+}

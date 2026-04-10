@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 export type AuthMode = 'signin' | 'signup';
 export type AuthProvider = 'email' | 'google' | 'apple';
-export type AuthIntentKind = 'upload' | 'notifications' | 'profile' | 'creator-tools';
+export type AuthIntentKind = 'upload' | 'notifications' | 'profile' | 'creator-tools' | 'upgrade-plan';
 
 export interface AuthIntent {
   readonly kind: AuthIntentKind;
@@ -18,6 +18,7 @@ export interface AuthUser {
   readonly email: string;
   readonly avatarUrl: string;
   readonly plan: 'Free' | 'Pro';
+  readonly planRenewalDate?: string;
   readonly authProvider: AuthProvider;
   readonly isCreator: boolean;
   readonly unreadNotifications: number;
@@ -64,6 +65,7 @@ export class AuthService {
       email: normalizedEmail,
       avatarUrl: this.buildAvatarUrl(normalizedEmail),
       plan: 'Free',
+      planRenewalDate: undefined,
       authProvider: 'email',
       isCreator: normalizedEmail.includes('creator'),
       unreadNotifications: 3
@@ -85,6 +87,7 @@ export class AuthService {
       email: normalizedEmail,
       avatarUrl: this.buildAvatarUrl(normalizedEmail),
       plan: 'Free',
+      planRenewalDate: undefined,
       authProvider: 'email',
       isCreator: false,
       unreadNotifications: 1
@@ -104,7 +107,8 @@ export class AuthService {
       displayName: provider === 'google' ? 'Google Creator' : 'Apple Curator',
       email: provider === 'google' ? 'creator.google@example.com' : 'curator.apple@example.com',
       avatarUrl: this.buildAvatarUrl(provider),
-      plan: provider === 'google' ? 'Pro' : 'Free',
+      plan: 'Free',
+      planRenewalDate: undefined,
       authProvider: provider,
       isCreator: provider === 'google',
       unreadNotifications: provider === 'google' ? 5 : 2
@@ -169,6 +173,21 @@ export class AuthService {
     this.persistSession();
   }
 
+  upgradeToPro(): void {
+    const currentUser = this.user();
+
+    if (!currentUser || currentUser.plan === 'Pro') {
+      return;
+    }
+
+    this.user.set({
+      ...currentUser,
+      plan: 'Pro',
+      planRenewalDate: this.getNextRenewalDate()
+    });
+    this.persistSession();
+  }
+
   private setSession(session: StoredSession): void {
     this.accessToken.set(session.accessToken);
     this.user.set(session.user);
@@ -223,6 +242,12 @@ export class AuthService {
 
   private buildAvatarUrl(seed: string): string {
     return `https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(seed)}`;
+  }
+
+  private getNextRenewalDate(): string {
+    const renewalDate = new Date();
+    renewalDate.setDate(renewalDate.getDate() + 30);
+    return renewalDate.toISOString();
   }
 
   private toDisplayName(value: string): string {

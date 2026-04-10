@@ -25,11 +25,38 @@
     }
   </nav>
 
-  <div class="side-nav__promo surface-card">
-    <p class="side-nav__promo-label">PRO PLAN</p>
-    <div class="side-nav__progress">
-      <span class="side-nav__progress-fill"></span>
+  @if (activePlan() === 'Pro') {
+    <div class="side-nav__promo surface-card">
+      <div class="side-nav__promo-head">
+        <p class="side-nav__promo-label">PRO PLAN</p>
+        <span class="side-nav__promo-status">
+          @if (planRenewalDate()) {
+            {{ planRenewalDate() | date: 'dd MMM' }}
+          } @else {
+            Attivo
+          }
+        </span>
+      </div>
+      <div class="side-nav__progress">
+        <span class="side-nav__progress-fill" [style.inline-size.%]="planUsage()"></span>
+      </div>
+      <p class="side-nav__promo-copy">
+        @if (planRenewalDate()) {
+          Rinnovo {{ planRenewalDate() | date: 'dd MMM yyyy' }}
+        } @else {
+          Stato piano attivo
+        }
+      </p>
     </div>
-    <button type="button" class="side-nav__promo-action">Upgrade Now</button>
-  </div>
+  } @else {
+    <button
+      type="button"
+      class="side-nav__promo side-nav__promo--free surface-card"
+      (click)="openPlanDetails()"
+      [attr.aria-label]="'Apri dettagli piano Free'">
+      <p class="side-nav__promo-label">FREE PLAN</p>
+      <p class="side-nav__promo-copy">Vedi limiti e vantaggi del piano Pro</p>
+      <span class="side-nav__promo-action">Dettagli piano</span>
+    </button>
+  }
 </aside>

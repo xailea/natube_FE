@@ -2,15 +2,17 @@ import {
   AuthModalService,
   AuthService,
   LanguageService,
+  PlanModalService,
   TranslateLoader,
   TranslateModule
-} from "./chunk-HALBEQZX.js";
+} from "./chunk-ISP6ZPZC.js";
 import {
   APP_INITIALIZER,
   ApplicationRef,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  DatePipe,
   DestroyRef,
   Directive,
   ElementRef,
@@ -73,6 +75,9 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
+  ɵɵdomElementEnd,
+  ɵɵdomElementStart,
+  ɵɵdomListener,
   ɵɵelement,
   ɵɵelementEnd,
   ɵɵelementStart,
@@ -80,14 +85,18 @@ import {
   ɵɵgetInheritedFactory,
   ɵɵlistener,
   ɵɵnextContext,
+  ɵɵpipe,
+  ɵɵpipeBind2,
   ɵɵproperty,
+  ɵɵrepeater,
+  ɵɵrepeaterCreate,
   ɵɵresetView,
   ɵɵresolveDocument,
   ɵɵrestoreView,
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1
-} from "./chunk-VWYUV7GB.js";
+} from "./chunk-HPYWNVFW.js";
 
 // node_modules/@ngx-translate/http-loader/fesm2022/ngx-translate-http-loader.mjs
 var TRANSLATE_HTTP_LOADER_CONFIG = new InjectionToken("TRANSLATE_HTTP_LOADER_CONFIG");
@@ -169,7 +178,7 @@ var routes = [
   },
   {
     path: "home",
-    loadComponent: () => import("./chunk-KBM6M3WE.js").then((m) => m.HomePageComponent),
+    loadComponent: () => import("./chunk-4WXZ2IQ6.js").then((m) => m.HomePageComponent),
     data: {
       title: "Home",
       description: "Latest from creators you follow, watch progress, and personal recommendations."
@@ -177,7 +186,7 @@ var routes = [
   },
   {
     path: "explore",
-    loadComponent: () => import("./chunk-MMYQ7JOU.js").then((m) => m.ExplorePageComponent),
+    loadComponent: () => import("./chunk-EIXBWEZH.js").then((m) => m.ExplorePageComponent),
     data: {
       title: "Explore",
       description: "Discover videos outside your current network through curated buckets and genres."
@@ -185,11 +194,11 @@ var routes = [
   },
   {
     path: "creator",
-    loadComponent: () => import("./chunk-CK6W5MTJ.js").then((m) => m.CreatorExplorePageComponent)
+    loadComponent: () => import("./chunk-P6SBCSA6.js").then((m) => m.CreatorExplorePageComponent)
   },
   {
     path: "profile",
-    loadComponent: () => import("./chunk-3FX7TEZP.js").then((m) => m.ProfilePageComponent),
+    loadComponent: () => import("./chunk-FT6H3IFI.js").then((m) => m.ProfilePageComponent),
     data: {
       title: "Profile",
       description: "Account settings, creator tools and watch preferences."
@@ -198,7 +207,7 @@ var routes = [
   {
     path: "hidden",
     canActivate: [authGuard],
-    loadComponent: () => import("./chunk-CCNXVWYL.js").then((m) => m.HiddenPageComponent),
+    loadComponent: () => import("./chunk-RFZWWSWL.js").then((m) => m.HiddenPageComponent),
     data: {
       title: "Nascosti",
       description: "Manage the videos hidden from your personal experience."
@@ -207,7 +216,7 @@ var routes = [
   {
     path: "upload",
     canActivate: [authGuard],
-    loadComponent: () => import("./chunk-XQ4JG52A.js").then((m) => m.UploadPageComponent)
+    loadComponent: () => import("./chunk-AV5ZYUUE.js").then((m) => m.UploadPageComponent)
   },
   {
     path: "**",
@@ -7407,6 +7416,10 @@ var _AuthModalComponent = class _AuthModalComponent {
         this.auth.enableCreatorMode();
       }
       void this.router.navigateByUrl(pendingIntent.redirectUrl);
+      return;
+    }
+    if (pendingIntent?.kind === "upgrade-plan") {
+      this.auth.upgradeToPro();
     }
   }
 };
@@ -7550,26 +7563,298 @@ var AuthModalComponent = _AuthModalComponent;
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AuthModalComponent, { className: "AuthModalComponent", filePath: "src/app/features/auth/components/auth-modal/auth-modal.component.ts", lineNumber: 15 });
 })();
 
+// src/app/features/plan/components/plan-modal/plan-modal.component.ts
+var _forTrack0 = ($index, $item) => $item.label;
+function PlanModalComponent_Conditional_0_Conditional_16_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275domElementStart(0, "p");
+    \u0275\u0275text(1);
+    \u0275\u0275pipe(2, "date");
+    \u0275\u0275domElementEnd();
+  }
+  if (rf & 2) {
+    let tmp_2_0;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1("Rinnovo ", \u0275\u0275pipeBind2(2, 1, (tmp_2_0 = ctx_r1.auth.user()) == null ? null : tmp_2_0.planRenewalDate, "dd MMM yyyy"));
+  }
+}
+function PlanModalComponent_Conditional_0_Conditional_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275domElementStart(0, "p");
+    \u0275\u0275text(1, "Attivo");
+    \u0275\u0275domElementEnd();
+  }
+}
+function PlanModalComponent_Conditional_0_Conditional_18_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275domElementStart(0, "p");
+    \u0275\u0275text(1, "Upgrade disponibile");
+    \u0275\u0275domElementEnd();
+  }
+}
+function PlanModalComponent_Conditional_0_For_28_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275domElementStart(0, "div", 12)(1, "span", 16);
+    \u0275\u0275text(2);
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(5, "span", 17);
+    \u0275\u0275text(6);
+    \u0275\u0275domElementEnd()();
+  }
+  if (rf & 2) {
+    const feature_r3 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(feature_r3.label);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(feature_r3.free);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(feature_r3.pro);
+  }
+}
+function PlanModalComponent_Conditional_0_Conditional_30_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275domElementStart(0, "button", 18);
+    \u0275\u0275domListener("click", function PlanModalComponent_Conditional_0_Conditional_30_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.goToProfile());
+    });
+    \u0275\u0275text(1, "Vai al profilo");
+    \u0275\u0275domElementEnd();
+  }
+}
+function PlanModalComponent_Conditional_0_Conditional_31_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275domElementStart(0, "button", 19);
+    \u0275\u0275domListener("click", function PlanModalComponent_Conditional_0_Conditional_31_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.handlePrimaryAction());
+    });
+    \u0275\u0275text(1, "Passa a Pro");
+    \u0275\u0275domElementEnd();
+  }
+}
+function PlanModalComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275domElementStart(0, "div", 0);
+    \u0275\u0275domListener("click", function PlanModalComponent_Conditional_0_Template_div_click_0_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.close());
+    });
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(1, "section", 1)(2, "button", 2);
+    \u0275\u0275domListener("click", function PlanModalComponent_Conditional_0_Template_button_click_2_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.close());
+    });
+    \u0275\u0275domElementStart(3, "span", 3);
+    \u0275\u0275text(4, "close");
+    \u0275\u0275domElementEnd()();
+    \u0275\u0275domElementStart(5, "div", 4)(6, "div")(7, "p", 5);
+    \u0275\u0275text(8, "Membership");
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(9, "h2", 6);
+    \u0275\u0275text(10, "Confronta Free e Pro");
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(11, "p", 7);
+    \u0275\u0275text(12, " Tutti gli utenti iniziano dal piano Free. Passa a Pro per sbloccare upload illimitati, 4K e strumenti avanzati. ");
+    \u0275\u0275domElementEnd()();
+    \u0275\u0275domElementStart(13, "div", 8)(14, "span", 9);
+    \u0275\u0275text(15);
+    \u0275\u0275domElementEnd();
+    \u0275\u0275conditionalCreate(16, PlanModalComponent_Conditional_0_Conditional_16_Template, 3, 4, "p")(17, PlanModalComponent_Conditional_0_Conditional_17_Template, 2, 0, "p")(18, PlanModalComponent_Conditional_0_Conditional_18_Template, 2, 0, "p");
+    \u0275\u0275domElementEnd()();
+    \u0275\u0275domElementStart(19, "div", 10)(20, "div", 11)(21, "span");
+    \u0275\u0275text(22, "Feature");
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(23, "span");
+    \u0275\u0275text(24, "Free");
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(25, "span");
+    \u0275\u0275text(26, "Pro");
+    \u0275\u0275domElementEnd()();
+    \u0275\u0275repeaterCreate(27, PlanModalComponent_Conditional_0_For_28_Template, 7, 3, "div", 12, _forTrack0);
+    \u0275\u0275domElementEnd();
+    \u0275\u0275domElementStart(29, "div", 13);
+    \u0275\u0275conditionalCreate(30, PlanModalComponent_Conditional_0_Conditional_30_Template, 2, 0, "button", 14)(31, PlanModalComponent_Conditional_0_Conditional_31_Template, 2, 0, "button", 15);
+    \u0275\u0275domElementEnd()();
+  }
+  if (rf & 2) {
+    let tmp_3_0;
+    let tmp_5_0;
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(14);
+    \u0275\u0275classProp("plan-modal__status-badge--pro", ctx_r1.currentPlan() === "Pro");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.currentPlan() === "Pro" ? "PRO PLAN" : "FREE PLAN", " ");
+    \u0275\u0275advance();
+    \u0275\u0275conditional(((tmp_3_0 = ctx_r1.auth.user()) == null ? null : tmp_3_0.plan) === "Pro" && ((tmp_3_0 = ctx_r1.auth.user()) == null ? null : tmp_3_0.planRenewalDate) ? 16 : ((tmp_3_0 = ctx_r1.auth.user()) == null ? null : tmp_3_0.plan) === "Pro" ? 17 : 18);
+    \u0275\u0275advance(11);
+    \u0275\u0275repeater(ctx_r1.modal.features);
+    \u0275\u0275advance(3);
+    \u0275\u0275conditional(((tmp_5_0 = ctx_r1.auth.user()) == null ? null : tmp_5_0.plan) === "Pro" ? 30 : 31);
+  }
+}
+var _PlanModalComponent = class _PlanModalComponent {
+  constructor() {
+    this.router = inject(Router);
+    this.auth = inject(AuthService);
+    this.authModal = inject(AuthModalService);
+    this.modal = inject(PlanModalService);
+    this.currentPlan = computed(() => this.auth.user()?.plan ?? "Free", ...ngDevMode ? [{ debugName: "currentPlan" }] : []);
+  }
+  onEscape() {
+    if (this.modal.state().isOpen) {
+      this.close();
+    }
+  }
+  close() {
+    this.modal.close();
+  }
+  handlePrimaryAction() {
+    if (!this.auth.isAuthenticated()) {
+      this.auth.setPendingIntent({
+        kind: "upgrade-plan",
+        title: "Create your account to continue with Pro",
+        description: "Sign in or create an account, then upgrade your plan from the sidebar.",
+        preferredMode: "signup"
+      });
+      this.close();
+      this.authModal.open({
+        mode: "signup",
+        title: "Create your account to continue with Pro",
+        description: "Save your library, unlock uploads, and manage your plan in one place."
+      });
+      return;
+    }
+    this.auth.upgradeToPro();
+  }
+  goToProfile() {
+    this.close();
+    void this.router.navigateByUrl("/profile");
+  }
+};
+_PlanModalComponent.\u0275fac = function PlanModalComponent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _PlanModalComponent)();
+};
+_PlanModalComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PlanModalComponent, selectors: [["app-plan-modal"]], hostBindings: function PlanModalComponent_HostBindings(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275listener("keydown.escape", function PlanModalComponent_keydown_escape_HostBindingHandler() {
+      return ctx.onEscape();
+    }, \u0275\u0275resolveDocument);
+  }
+}, decls: 1, vars: 1, consts: [[1, "plan-modal-backdrop", 3, "click"], ["role", "dialog", "aria-modal", "true", "aria-labelledby", "plan-modal-title", 1, "plan-modal", "surface-card"], ["type", "button", "aria-label", "Close plan modal", 1, "plan-modal__close", "icon-button", 3, "click"], [1, "material-symbols-outlined"], [1, "plan-modal__hero"], [1, "text-label", "plan-modal__eyebrow"], ["id", "plan-modal-title", 1, "page-title", "plan-modal__title"], [1, "plan-modal__description"], [1, "plan-modal__status"], [1, "plan-modal__status-badge"], [1, "plan-modal__comparison"], [1, "plan-modal__columns", "plan-modal__columns--head", "text-label"], [1, "plan-modal__columns"], [1, "plan-modal__actions"], ["type", "button", 1, "plan-modal__secondary"], ["type", "button", 1, "plan-modal__primary"], [1, "plan-modal__feature"], [1, "plan-modal__pro-value"], ["type", "button", 1, "plan-modal__secondary", 3, "click"], ["type", "button", 1, "plan-modal__primary", 3, "click"]], template: function PlanModalComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275conditionalCreate(0, PlanModalComponent_Conditional_0_Template, 32, 5);
+  }
+  if (rf & 2) {
+    \u0275\u0275conditional(ctx.modal.state().isOpen ? 0 : -1);
+  }
+}, dependencies: [DatePipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: contents;\n}\n.plan-modal-backdrop[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 92;\n  background: rgba(0, 0, 0, 0.58);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.plan-modal[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 93;\n  inline-size: min(52rem, 100vw - 2rem);\n  max-block-size: calc(100vh - 2rem);\n  overflow: auto;\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1.25rem;\n}\n.plan-modal__close[_ngcontent-%COMP%] {\n  justify-self: end;\n}\n.plan-modal__hero[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  gap: 1rem;\n}\n.plan-modal__eyebrow[_ngcontent-%COMP%], \n.plan-modal__title[_ngcontent-%COMP%], \n.plan-modal__description[_ngcontent-%COMP%], \n.plan-modal__status[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.plan-modal__description[_ngcontent-%COMP%], \n.plan-modal__status[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  color: var(--color-on-surface-variant);\n}\n.plan-modal__status[_ngcontent-%COMP%] {\n  min-inline-size: 11rem;\n  padding: 1rem;\n  border-radius: var(--radius-lg);\n  background: rgba(255, 255, 255, 0.04);\n  display: grid;\n  gap: 0.4rem;\n  align-content: start;\n}\n.plan-modal__status-badge[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-block-size: 2rem;\n  padding-inline: 0.85rem;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.08);\n  color: var(--color-secondary);\n  font: 800 0.78rem/1 "Inter", sans-serif;\n  letter-spacing: 0.1em;\n}\n.plan-modal__status-badge--pro[_ngcontent-%COMP%] {\n  background: rgba(76, 214, 251, 0.16);\n  color: var(--color-tertiary);\n}\n.plan-modal__comparison[_ngcontent-%COMP%] {\n  display: grid;\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 1.25rem;\n  overflow: hidden;\n}\n.plan-modal__columns[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1fr);\n  gap: 1rem;\n  padding: 1rem 1.1rem;\n  border-block-end: 1px solid rgba(255, 255, 255, 0.06);\n}\n.plan-modal__columns[_ngcontent-%COMP%]:last-child {\n  border-block-end: none;\n}\n.plan-modal__columns--head[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-on-surface-variant);\n}\n.plan-modal__feature[_ngcontent-%COMP%] {\n  font-weight: 700;\n}\n.plan-modal__pro-value[_ngcontent-%COMP%] {\n  color: var(--color-tertiary);\n  font-weight: 700;\n}\n.plan-modal__actions[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: end;\n}\n.plan-modal__primary[_ngcontent-%COMP%], \n.plan-modal__secondary[_ngcontent-%COMP%] {\n  min-block-size: 3rem;\n  padding: 0 1.2rem;\n  border-radius: 999px;\n  font: inherit;\n  font-weight: 800;\n}\n.plan-modal__primary[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.plan-modal__secondary[_ngcontent-%COMP%] {\n  border: 1px solid rgba(255, 255, 255, 0.12);\n  color: var(--color-on-surface);\n  background: transparent;\n}\n@media (max-width: 767px) {\n  .plan-modal[_ngcontent-%COMP%] {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-block-size: 90vh;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n  .plan-modal__hero[_ngcontent-%COMP%], \n   .plan-modal__columns[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=plan-modal.component.css.map */'], changeDetection: 0 });
+var PlanModalComponent = _PlanModalComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PlanModalComponent, [{
+    type: Component,
+    args: [{ selector: "app-plan-modal", standalone: true, imports: [DatePipe], changeDetection: ChangeDetectionStrategy.OnPush, template: `@if (modal.state().isOpen) {
+  <div class="plan-modal-backdrop" (click)="close()"></div>
+
+  <section
+    class="plan-modal surface-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="plan-modal-title">
+    <button type="button" class="plan-modal__close icon-button" aria-label="Close plan modal" (click)="close()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="plan-modal__hero">
+      <div>
+        <p class="text-label plan-modal__eyebrow">Membership</p>
+        <h2 id="plan-modal-title" class="page-title plan-modal__title">Confronta Free e Pro</h2>
+        <p class="plan-modal__description">
+          Tutti gli utenti iniziano dal piano Free. Passa a Pro per sbloccare upload illimitati, 4K e strumenti avanzati.
+        </p>
+      </div>
+
+      <div class="plan-modal__status">
+        <span class="plan-modal__status-badge" [class.plan-modal__status-badge--pro]="currentPlan() === 'Pro'">
+          {{ currentPlan() === 'Pro' ? 'PRO PLAN' : 'FREE PLAN' }}
+        </span>
+        @if (auth.user()?.plan === 'Pro' && auth.user()?.planRenewalDate) {
+          <p>Rinnovo {{ auth.user()?.planRenewalDate | date: 'dd MMM yyyy' }}</p>
+        } @else if (auth.user()?.plan === 'Pro') {
+          <p>Attivo</p>
+        } @else {
+          <p>Upgrade disponibile</p>
+        }
+      </div>
+    </div>
+
+    <div class="plan-modal__comparison">
+      <div class="plan-modal__columns plan-modal__columns--head text-label">
+        <span>Feature</span>
+        <span>Free</span>
+        <span>Pro</span>
+      </div>
+
+      @for (feature of modal.features; track feature.label) {
+        <div class="plan-modal__columns">
+          <span class="plan-modal__feature">{{ feature.label }}</span>
+          <span>{{ feature.free }}</span>
+          <span class="plan-modal__pro-value">{{ feature.pro }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="plan-modal__actions">
+      @if (auth.user()?.plan === 'Pro') {
+        <button type="button" class="plan-modal__secondary" (click)="goToProfile()">Vai al profilo</button>
+      } @else {
+        <button type="button" class="plan-modal__primary" (click)="handlePrimaryAction()">Passa a Pro</button>
+      }
+    </div>
+  </section>
+}
+`, styles: ['/* src/app/features/plan/components/plan-modal/plan-modal.component.scss */\n:host {\n  display: contents;\n}\n.plan-modal-backdrop {\n  position: fixed;\n  inset: 0;\n  z-index: 92;\n  background: rgba(0, 0, 0, 0.58);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.plan-modal {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 93;\n  inline-size: min(52rem, 100vw - 2rem);\n  max-block-size: calc(100vh - 2rem);\n  overflow: auto;\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1.25rem;\n}\n.plan-modal__close {\n  justify-self: end;\n}\n.plan-modal__hero {\n  display: flex;\n  justify-content: space-between;\n  gap: 1rem;\n}\n.plan-modal__eyebrow,\n.plan-modal__title,\n.plan-modal__description,\n.plan-modal__status p {\n  margin: 0;\n}\n.plan-modal__description,\n.plan-modal__status p {\n  color: var(--color-on-surface-variant);\n}\n.plan-modal__status {\n  min-inline-size: 11rem;\n  padding: 1rem;\n  border-radius: var(--radius-lg);\n  background: rgba(255, 255, 255, 0.04);\n  display: grid;\n  gap: 0.4rem;\n  align-content: start;\n}\n.plan-modal__status-badge {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  min-block-size: 2rem;\n  padding-inline: 0.85rem;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.08);\n  color: var(--color-secondary);\n  font: 800 0.78rem/1 "Inter", sans-serif;\n  letter-spacing: 0.1em;\n}\n.plan-modal__status-badge--pro {\n  background: rgba(76, 214, 251, 0.16);\n  color: var(--color-tertiary);\n}\n.plan-modal__comparison {\n  display: grid;\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 1.25rem;\n  overflow: hidden;\n}\n.plan-modal__columns {\n  display: grid;\n  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1fr);\n  gap: 1rem;\n  padding: 1rem 1.1rem;\n  border-block-end: 1px solid rgba(255, 255, 255, 0.06);\n}\n.plan-modal__columns:last-child {\n  border-block-end: none;\n}\n.plan-modal__columns--head {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--color-on-surface-variant);\n}\n.plan-modal__feature {\n  font-weight: 700;\n}\n.plan-modal__pro-value {\n  color: var(--color-tertiary);\n  font-weight: 700;\n}\n.plan-modal__actions {\n  display: flex;\n  justify-content: end;\n}\n.plan-modal__primary,\n.plan-modal__secondary {\n  min-block-size: 3rem;\n  padding: 0 1.2rem;\n  border-radius: 999px;\n  font: inherit;\n  font-weight: 800;\n}\n.plan-modal__primary {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.plan-modal__secondary {\n  border: 1px solid rgba(255, 255, 255, 0.12);\n  color: var(--color-on-surface);\n  background: transparent;\n}\n@media (max-width: 767px) {\n  .plan-modal {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-block-size: 90vh;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n  .plan-modal__hero,\n  .plan-modal__columns {\n    grid-template-columns: 1fr;\n  }\n}\n/*# sourceMappingURL=plan-modal.component.css.map */\n'] }]
+  }], null, { onEscape: [{
+    type: HostListener,
+    args: ["document:keydown.escape"]
+  }] });
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PlanModalComponent, { className: "PlanModalComponent", filePath: "src/app/features/plan/components/plan-modal/plan-modal.component.ts", lineNumber: 16 });
+})();
+
 // src/app/app.component.ts
 var _AppComponent = class _AppComponent {
 };
 _AppComponent.\u0275fac = function AppComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _AppComponent)();
 };
-_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], decls: 2, vars: 0, template: function AppComponent_Template(rf, ctx) {
+_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], decls: 3, vars: 0, template: function AppComponent_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "router-outlet")(1, "app-auth-modal");
+    \u0275\u0275element(0, "router-outlet")(1, "app-auth-modal")(2, "app-plan-modal");
   }
-}, dependencies: [RouterOutlet, AuthModalComponent], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n}\n/*# sourceMappingURL=app.component.css.map */"], changeDetection: 0 });
+}, dependencies: [RouterOutlet, AuthModalComponent, PlanModalComponent], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n}\n/*# sourceMappingURL=app.component.css.map */"], changeDetection: 0 });
 var AppComponent = _AppComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AppComponent, [{
     type: Component,
-    args: [{ selector: "app-root", standalone: true, imports: [RouterOutlet, AuthModalComponent], changeDetection: ChangeDetectionStrategy.OnPush, template: "<router-outlet></router-outlet>\n<app-auth-modal></app-auth-modal>\n", styles: ["/* src/app/app.component.scss */\n:host {\n  display: block;\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
+    args: [{ selector: "app-root", standalone: true, imports: [RouterOutlet, AuthModalComponent, PlanModalComponent], changeDetection: ChangeDetectionStrategy.OnPush, template: "<router-outlet></router-outlet>\n<app-auth-modal></app-auth-modal>\n<app-plan-modal></app-plan-modal>\n", styles: ["/* src/app/app.component.scss */\n:host {\n  display: block;\n}\n/*# sourceMappingURL=app.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 13 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 14 });
 })();
 
 // src/main.ts

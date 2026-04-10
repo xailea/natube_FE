@@ -34,7 +34,7 @@ import {
   ɵɵdefineNgModule,
   ɵɵdefinePipe,
   ɵɵgetInheritedFactory
-} from "./chunk-VWYUV7GB.js";
+} from "./chunk-HPYWNVFW.js";
 
 // node_modules/@ngx-translate/core/fesm2022/ngx-translate-core.mjs
 var MissingTranslationHandler = class {
@@ -1283,6 +1283,7 @@ var _AuthService = class _AuthService {
       email: normalizedEmail,
       avatarUrl: this.buildAvatarUrl(normalizedEmail),
       plan: "Free",
+      planRenewalDate: void 0,
       authProvider: "email",
       isCreator: normalizedEmail.includes("creator"),
       unreadNotifications: 3
@@ -1301,6 +1302,7 @@ var _AuthService = class _AuthService {
       email: normalizedEmail,
       avatarUrl: this.buildAvatarUrl(normalizedEmail),
       plan: "Free",
+      planRenewalDate: void 0,
       authProvider: "email",
       isCreator: false,
       unreadNotifications: 1
@@ -1317,7 +1319,8 @@ var _AuthService = class _AuthService {
       displayName: provider === "google" ? "Google Creator" : "Apple Curator",
       email: provider === "google" ? "creator.google@example.com" : "curator.apple@example.com",
       avatarUrl: this.buildAvatarUrl(provider),
-      plan: provider === "google" ? "Pro" : "Free",
+      plan: "Free",
+      planRenewalDate: void 0,
       authProvider: provider,
       isCreator: provider === "google",
       unreadNotifications: provider === "google" ? 5 : 2
@@ -1366,6 +1369,17 @@ var _AuthService = class _AuthService {
     this.creatorMode.set(value);
     this.persistSession();
   }
+  upgradeToPro() {
+    const currentUser = this.user();
+    if (!currentUser || currentUser.plan === "Pro") {
+      return;
+    }
+    this.user.set(__spreadProps(__spreadValues({}, currentUser), {
+      plan: "Pro",
+      planRenewalDate: this.getNextRenewalDate()
+    }));
+    this.persistSession();
+  }
   setSession(session) {
     this.accessToken.set(session.accessToken);
     this.user.set(session.user);
@@ -1410,6 +1424,11 @@ var _AuthService = class _AuthService {
   buildAvatarUrl(seed) {
     return `https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(seed)}`;
   }
+  getNextRenewalDate() {
+    const renewalDate = /* @__PURE__ */ new Date();
+    renewalDate.setDate(renewalDate.getDate() + 30);
+    return renewalDate.toISOString();
+  }
   toDisplayName(value) {
     return value.split(" ").filter(Boolean).map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(" ");
   }
@@ -1421,6 +1440,76 @@ _AuthService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: 
 var AuthService = _AuthService;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AuthService, [{
+    type: Injectable,
+    args: [{ providedIn: "root" }]
+  }], null, null);
+})();
+
+// src/app/core/services/plan-modal.service.ts
+var PLAN_FEATURES = [
+  {
+    label: "Libreria personale",
+    free: "Fino a 50 contenuti salvati",
+    pro: "Illimitata"
+  },
+  {
+    label: "Accesso creator pubblici",
+    free: "S\xEC",
+    pro: "S\xEC"
+  },
+  {
+    label: "Upload contenuti",
+    free: "Fino a 3 al mese",
+    pro: "Illimitati"
+  },
+  {
+    label: "Qualita di riproduzione",
+    free: "720p",
+    pro: "4K"
+  },
+  {
+    label: "Esportazione collezioni",
+    free: "No",
+    pro: "S\xEC"
+  },
+  {
+    label: "Note e annotazioni sui video",
+    free: "No",
+    pro: "S\xEC"
+  },
+  {
+    label: "Accesso anticipato a nuovi creator",
+    free: "No",
+    pro: "S\xEC"
+  },
+  {
+    label: "Badge profilo Pro",
+    free: "No",
+    pro: "S\xEC"
+  }
+];
+var DEFAULT_STATE = {
+  isOpen: false
+};
+var _PlanModalService = class _PlanModalService {
+  constructor() {
+    this.state = signal(DEFAULT_STATE, ...ngDevMode ? [{ debugName: "state" }] : []);
+    this.features = PLAN_FEATURES;
+  }
+  open() {
+    this.state.set({ isOpen: true });
+  }
+  close() {
+    this.state.set(DEFAULT_STATE);
+  }
+};
+_PlanModalService.\u0275fac = function PlanModalService_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || _PlanModalService)();
+};
+_PlanModalService.\u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _PlanModalService, factory: _PlanModalService.\u0275fac, providedIn: "root" });
+var PlanModalService = _PlanModalService;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PlanModalService, [{
     type: Injectable,
     args: [{ providedIn: "root" }]
   }], null, null);
@@ -1513,6 +1602,7 @@ export {
   TranslateModule,
   AuthModalService,
   AuthService,
+  PlanModalService,
   LanguageService
 };
-//# sourceMappingURL=chunk-HALBEQZX.js.map
+//# sourceMappingURL=chunk-ISP6ZPZC.js.map
