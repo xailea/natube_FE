@@ -15,9 +15,12 @@
         [routerLink]="item.route"
         routerLinkActive="side-nav__item--active"
         [routerLinkActiveOptions]="{ exact: item.route !== '/creator' }"
+        [attr.aria-label]="item.label"
+        [attr.title]="layout.sidebarCollapsed() ? item.label : null"
       >
         <span class="material-symbols-outlined">{{ item.icon }}</span>
         <span class="nav-label">{{ item.label }}</span>
+        <span class="side-nav__tooltip">{{ item.label }}</span>
       </a>
     }
   </nav>

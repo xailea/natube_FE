@@ -6,7 +6,7 @@ import {
   MobileNavComponent,
   SideNavComponent,
   TopNavbarComponent
-} from "./chunk-ZSE2O4B6.js";
+} from "./chunk-2NOT4U2W.js";
 import {
   TranslatePipe
 } from "./chunk-HALBEQZX.js";
@@ -468,4 +468,4 @@ var HiddenPageComponent = _HiddenPageComponent;
 export {
   HiddenPageComponent
 };
-//# sourceMappingURL=chunk-QBDBEOCV.js.map
+//# sourceMappingURL=chunk-CCNXVWYL.js.map

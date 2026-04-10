@@ -12,11 +12,6 @@ export class LayoutService {
 
     if (this.isMobile()) {
       this.sidebarCollapsed.set(true);
-      return;
-    }
-
-    if (width >= this.mobileBreakpoint && this.sidebarCollapsed() && width > 1280) {
-      this.sidebarCollapsed.set(false);
     }
   }
 

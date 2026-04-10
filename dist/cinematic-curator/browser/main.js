@@ -169,7 +169,7 @@ var routes = [
   },
   {
     path: "home",
-    loadComponent: () => import("./chunk-VYIUG7JB.js").then((m) => m.HomePageComponent),
+    loadComponent: () => import("./chunk-KBM6M3WE.js").then((m) => m.HomePageComponent),
     data: {
       title: "Home",
       description: "Latest from creators you follow, watch progress, and personal recommendations."
@@ -177,7 +177,7 @@ var routes = [
   },
   {
     path: "explore",
-    loadComponent: () => import("./chunk-HL74YGX2.js").then((m) => m.ExplorePageComponent),
+    loadComponent: () => import("./chunk-MMYQ7JOU.js").then((m) => m.ExplorePageComponent),
     data: {
       title: "Explore",
       description: "Discover videos outside your current network through curated buckets and genres."
@@ -185,11 +185,11 @@ var routes = [
   },
   {
     path: "creator",
-    loadComponent: () => import("./chunk-TCACRJOR.js").then((m) => m.CreatorExplorePageComponent)
+    loadComponent: () => import("./chunk-CK6W5MTJ.js").then((m) => m.CreatorExplorePageComponent)
   },
   {
     path: "profile",
-    loadComponent: () => import("./chunk-W5CSL33C.js").then((m) => m.ProfilePageComponent),
+    loadComponent: () => import("./chunk-3FX7TEZP.js").then((m) => m.ProfilePageComponent),
     data: {
       title: "Profile",
       description: "Account settings, creator tools and watch preferences."
@@ -198,7 +198,7 @@ var routes = [
   {
     path: "hidden",
     canActivate: [authGuard],
-    loadComponent: () => import("./chunk-QBDBEOCV.js").then((m) => m.HiddenPageComponent),
+    loadComponent: () => import("./chunk-CCNXVWYL.js").then((m) => m.HiddenPageComponent),
     data: {
       title: "Nascosti",
       description: "Manage the videos hidden from your personal experience."
