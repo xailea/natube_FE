@@ -1459,7 +1459,7 @@ var PLAN_FEATURES = [
   },
   {
     label: "Upload contenuti",
-    free: "Fino a 3 al mese",
+    free: "Fino a 10 al mese",
     pro: "Illimitati"
   },
   {
@@ -1605,4 +1605,4 @@ export {
   PlanModalService,
   LanguageService
 };
-//# sourceMappingURL=chunk-ISP6ZPZC.js.map
+//# sourceMappingURL=chunk-PL5JZ6TK.js.map

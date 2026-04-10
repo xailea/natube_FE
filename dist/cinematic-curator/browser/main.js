@@ -5,7 +5,7 @@ import {
   PlanModalService,
   TranslateLoader,
   TranslateModule
-} from "./chunk-ISP6ZPZC.js";
+} from "./chunk-PL5JZ6TK.js";
 import {
   APP_INITIALIZER,
   ApplicationRef,
@@ -178,7 +178,7 @@ var routes = [
   },
   {
     path: "home",
-    loadComponent: () => import("./chunk-4WXZ2IQ6.js").then((m) => m.HomePageComponent),
+    loadComponent: () => import("./chunk-GZXDQWC6.js").then((m) => m.HomePageComponent),
     data: {
       title: "Home",
       description: "Latest from creators you follow, watch progress, and personal recommendations."
@@ -186,7 +186,7 @@ var routes = [
   },
   {
     path: "explore",
-    loadComponent: () => import("./chunk-EIXBWEZH.js").then((m) => m.ExplorePageComponent),
+    loadComponent: () => import("./chunk-RVZRWSFR.js").then((m) => m.ExplorePageComponent),
     data: {
       title: "Explore",
       description: "Discover videos outside your current network through curated buckets and genres."
@@ -194,11 +194,11 @@ var routes = [
   },
   {
     path: "creator",
-    loadComponent: () => import("./chunk-P6SBCSA6.js").then((m) => m.CreatorExplorePageComponent)
+    loadComponent: () => import("./chunk-WD2WP4RW.js").then((m) => m.CreatorExplorePageComponent)
   },
   {
     path: "profile",
-    loadComponent: () => import("./chunk-FT6H3IFI.js").then((m) => m.ProfilePageComponent),
+    loadComponent: () => import("./chunk-BELTV74P.js").then((m) => m.ProfilePageComponent),
     data: {
       title: "Profile",
       description: "Account settings, creator tools and watch preferences."
@@ -207,7 +207,7 @@ var routes = [
   {
     path: "hidden",
     canActivate: [authGuard],
-    loadComponent: () => import("./chunk-RFZWWSWL.js").then((m) => m.HiddenPageComponent),
+    loadComponent: () => import("./chunk-OG7VMYZR.js").then((m) => m.HiddenPageComponent),
     data: {
       title: "Nascosti",
       description: "Manage the videos hidden from your personal experience."
@@ -7124,43 +7124,61 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
 })();
 
 // src/app/features/auth/components/auth-modal/auth-modal.component.ts
-function AuthModalComponent_Conditional_0_Conditional_28_Conditional_5_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_29_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "Enter a valid email address.");
     \u0275\u0275elementEnd();
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_28_Conditional_10_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_29_Conditional_14_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "Password is required.");
     \u0275\u0275elementEnd();
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_28_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_29_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "form", 15);
-    \u0275\u0275listener("ngSubmit", function AuthModalComponent_Conditional_0_Conditional_28_Template_form_ngSubmit_0_listener() {
+    \u0275\u0275elementStart(0, "form", 16);
+    \u0275\u0275listener("ngSubmit", function AuthModalComponent_Conditional_0_Conditional_29_Template_form_ngSubmit_0_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.signIn());
     });
-    \u0275\u0275elementStart(1, "label", 16)(2, "span", 17);
+    \u0275\u0275elementStart(1, "label", 17)(2, "span", 18);
     \u0275\u0275text(3, "Email");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(4, "input", 18);
-    \u0275\u0275conditionalCreate(5, AuthModalComponent_Conditional_0_Conditional_28_Conditional_5_Template, 2, 0, "small");
+    \u0275\u0275element(4, "input", 19);
+    \u0275\u0275conditionalCreate(5, AuthModalComponent_Conditional_0_Conditional_29_Conditional_5_Template, 2, 0, "small");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "label", 16)(7, "span", 17);
+    \u0275\u0275elementStart(6, "label", 17)(7, "span", 18);
     \u0275\u0275text(8, "Password");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(9, "input", 19);
-    \u0275\u0275conditionalCreate(10, AuthModalComponent_Conditional_0_Conditional_28_Conditional_10_Template, 2, 0, "small");
+    \u0275\u0275elementStart(9, "div", 20);
+    \u0275\u0275element(10, "input", 21);
+    \u0275\u0275elementStart(11, "button", 22);
+    \u0275\u0275listener("click", function AuthModalComponent_Conditional_0_Conditional_29_Template_button_click_11_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.togglePasswordVisibility("signin"));
+    });
+    \u0275\u0275elementStart(12, "span", 3);
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275conditionalCreate(14, AuthModalComponent_Conditional_0_Conditional_29_Conditional_14_Template, 2, 0, "small");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "button", 20);
-    \u0275\u0275text(12);
+    \u0275\u0275elementStart(15, "button", 23);
+    \u0275\u0275listener("click", function AuthModalComponent_Conditional_0_Conditional_29_Template_button_click_15_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.requestPasswordReset());
+    });
+    \u0275\u0275text(16, "Password dimenticata?");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "button", 24);
+    \u0275\u0275text(18);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -7169,63 +7187,109 @@ function AuthModalComponent_Conditional_0_Conditional_28_Template(rf, ctx) {
     \u0275\u0275advance(5);
     \u0275\u0275conditional(ctx_r1.signInForm.controls.email.invalid && ctx_r1.signInForm.controls.email.touched ? 5 : -1);
     \u0275\u0275advance(5);
-    \u0275\u0275conditional(ctx_r1.signInForm.controls.password.invalid && ctx_r1.signInForm.controls.password.touched ? 10 : -1);
+    \u0275\u0275property("type", ctx_r1.signInPasswordVisible() ? "text" : "password");
     \u0275\u0275advance();
+    \u0275\u0275attribute("aria-label", ctx_r1.signInPasswordVisible() ? "Hide password" : "Show password");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", ctx_r1.signInPasswordVisible() ? "visibility_off" : "visibility", " ");
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.signInForm.controls.password.invalid && ctx_r1.signInForm.controls.password.touched ? 14 : -1);
+    \u0275\u0275advance(3);
     \u0275\u0275property("disabled", ctx_r1.isSubmitting());
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", ctx_r1.isSubmitting() ? "Signing in..." : "Sign in", " ");
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_29_Conditional_5_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_30_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "Add at least 2 characters.");
     \u0275\u0275elementEnd();
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_29_Conditional_10_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_30_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "Enter a valid email address.");
     \u0275\u0275elementEnd();
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_29_Conditional_15_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_30_Conditional_19_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "small");
     \u0275\u0275text(1, "Use at least 8 characters.");
     \u0275\u0275elementEnd();
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_29_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_30_Conditional_28_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "small");
+    \u0275\u0275text(1, "Confirm your password.");
+    \u0275\u0275elementEnd();
+  }
+}
+function AuthModalComponent_Conditional_0_Conditional_30_Conditional_29_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "small");
+    \u0275\u0275text(1, "Passwords must match.");
+    \u0275\u0275elementEnd();
+  }
+}
+function AuthModalComponent_Conditional_0_Conditional_30_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "form", 15);
-    \u0275\u0275listener("ngSubmit", function AuthModalComponent_Conditional_0_Conditional_29_Template_form_ngSubmit_0_listener() {
+    \u0275\u0275elementStart(0, "form", 16);
+    \u0275\u0275listener("ngSubmit", function AuthModalComponent_Conditional_0_Conditional_30_Template_form_ngSubmit_0_listener() {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.signUp());
     });
-    \u0275\u0275elementStart(1, "label", 16)(2, "span", 17);
+    \u0275\u0275elementStart(1, "label", 17)(2, "span", 18);
     \u0275\u0275text(3, "Display name");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(4, "input", 21);
-    \u0275\u0275conditionalCreate(5, AuthModalComponent_Conditional_0_Conditional_29_Conditional_5_Template, 2, 0, "small");
+    \u0275\u0275element(4, "input", 25);
+    \u0275\u0275conditionalCreate(5, AuthModalComponent_Conditional_0_Conditional_30_Conditional_5_Template, 2, 0, "small");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "label", 16)(7, "span", 17);
+    \u0275\u0275elementStart(6, "label", 17)(7, "span", 18);
     \u0275\u0275text(8, "Email");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(9, "input", 18);
-    \u0275\u0275conditionalCreate(10, AuthModalComponent_Conditional_0_Conditional_29_Conditional_10_Template, 2, 0, "small");
+    \u0275\u0275element(9, "input", 19);
+    \u0275\u0275conditionalCreate(10, AuthModalComponent_Conditional_0_Conditional_30_Conditional_10_Template, 2, 0, "small");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "label", 16)(12, "span", 17);
+    \u0275\u0275elementStart(11, "label", 17)(12, "span", 18);
     \u0275\u0275text(13, "Password");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(14, "input", 22);
-    \u0275\u0275conditionalCreate(15, AuthModalComponent_Conditional_0_Conditional_29_Conditional_15_Template, 2, 0, "small");
+    \u0275\u0275elementStart(14, "div", 20);
+    \u0275\u0275element(15, "input", 26);
+    \u0275\u0275elementStart(16, "button", 22);
+    \u0275\u0275listener("click", function AuthModalComponent_Conditional_0_Conditional_30_Template_button_click_16_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.togglePasswordVisibility("signup"));
+    });
+    \u0275\u0275elementStart(17, "span", 3);
+    \u0275\u0275text(18);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275conditionalCreate(19, AuthModalComponent_Conditional_0_Conditional_30_Conditional_19_Template, 2, 0, "small");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "button", 20);
-    \u0275\u0275text(17);
+    \u0275\u0275elementStart(20, "label", 17)(21, "span", 18);
+    \u0275\u0275text(22, "Confirm password");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "div", 20);
+    \u0275\u0275element(24, "input", 27);
+    \u0275\u0275elementStart(25, "button", 22);
+    \u0275\u0275listener("click", function AuthModalComponent_Conditional_0_Conditional_30_Template_button_click_25_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.togglePasswordVisibility("signup-confirm"));
+    });
+    \u0275\u0275elementStart(26, "span", 3);
+    \u0275\u0275text(27);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275conditionalCreate(28, AuthModalComponent_Conditional_0_Conditional_30_Conditional_28_Template, 2, 0, "small")(29, AuthModalComponent_Conditional_0_Conditional_30_Conditional_29_Template, 2, 0, "small");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(30, "button", 24);
+    \u0275\u0275text(31);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -7236,16 +7300,30 @@ function AuthModalComponent_Conditional_0_Conditional_29_Template(rf, ctx) {
     \u0275\u0275advance(5);
     \u0275\u0275conditional(ctx_r1.signUpForm.controls.email.invalid && ctx_r1.signUpForm.controls.email.touched ? 10 : -1);
     \u0275\u0275advance(5);
-    \u0275\u0275conditional(ctx_r1.signUpForm.controls.password.invalid && ctx_r1.signUpForm.controls.password.touched ? 15 : -1);
+    \u0275\u0275property("type", ctx_r1.signUpPasswordVisible() ? "text" : "password");
     \u0275\u0275advance();
+    \u0275\u0275attribute("aria-label", ctx_r1.signUpPasswordVisible() ? "Hide password" : "Show password");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", ctx_r1.signUpPasswordVisible() ? "visibility_off" : "visibility", " ");
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.signUpForm.controls.password.invalid && ctx_r1.signUpForm.controls.password.touched ? 19 : -1);
+    \u0275\u0275advance(5);
+    \u0275\u0275property("type", ctx_r1.signUpConfirmPasswordVisible() ? "text" : "password");
+    \u0275\u0275advance();
+    \u0275\u0275attribute("aria-label", ctx_r1.signUpConfirmPasswordVisible() ? "Hide password confirmation" : "Show password confirmation");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", ctx_r1.signUpConfirmPasswordVisible() ? "visibility_off" : "visibility", " ");
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.signUpForm.controls.confirmPassword.invalid && ctx_r1.signUpForm.controls.confirmPassword.touched ? 28 : ctx_r1.signUpForm.hasError("passwordMismatch") && ctx_r1.signUpForm.controls.confirmPassword.touched ? 29 : -1);
+    \u0275\u0275advance(2);
     \u0275\u0275property("disabled", ctx_r1.isSubmitting());
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" ", ctx_r1.isSubmitting() ? "Creating account..." : "Create account", " ");
   }
 }
-function AuthModalComponent_Conditional_0_Conditional_30_Template(rf, ctx) {
+function AuthModalComponent_Conditional_0_Conditional_31_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "p", 14);
+    \u0275\u0275elementStart(0, "p", 15);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -7323,8 +7401,10 @@ function AuthModalComponent_Conditional_0_Template(rf, ctx) {
     \u0275\u0275elementStart(25, "div", 12)(26, "span");
     \u0275\u0275text(27, "or use email");
     \u0275\u0275elementEnd()();
-    \u0275\u0275conditionalCreate(28, AuthModalComponent_Conditional_0_Conditional_28_Template, 13, 5, "form", 13)(29, AuthModalComponent_Conditional_0_Conditional_29_Template, 18, 6, "form", 13);
-    \u0275\u0275conditionalCreate(30, AuthModalComponent_Conditional_0_Conditional_30_Template, 2, 1, "p", 14);
+    \u0275\u0275elementStart(28, "div", 13);
+    \u0275\u0275conditionalCreate(29, AuthModalComponent_Conditional_0_Conditional_29_Template, 19, 8, "form", 14)(30, AuthModalComponent_Conditional_0_Conditional_30_Template, 32, 13, "form", 14);
+    \u0275\u0275elementEnd();
+    \u0275\u0275conditionalCreate(31, AuthModalComponent_Conditional_0_Conditional_31_Template, 2, 1, "p", 15);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -7338,10 +7418,10 @@ function AuthModalComponent_Conditional_0_Template(rf, ctx) {
     \u0275\u0275classProp("auth-modal__tab--active", ctx_r1.modal.state().mode === "signin");
     \u0275\u0275advance(2);
     \u0275\u0275classProp("auth-modal__tab--active", ctx_r1.modal.state().mode === "signup");
-    \u0275\u0275advance(14);
-    \u0275\u0275conditional(ctx_r1.modal.state().mode === "signin" ? 28 : 29);
+    \u0275\u0275advance(15);
+    \u0275\u0275conditional(ctx_r1.modal.state().mode === "signin" ? 29 : 30);
     \u0275\u0275advance(2);
-    \u0275\u0275conditional((tmp_6_0 = ctx_r1.feedback()) ? 30 : -1, tmp_6_0);
+    \u0275\u0275conditional((tmp_6_0 = ctx_r1.feedback()) ? 31 : -1, tmp_6_0);
   }
 }
 var _AuthModalComponent = class _AuthModalComponent {
@@ -7352,6 +7432,9 @@ var _AuthModalComponent = class _AuthModalComponent {
     this.modal = inject(AuthModalService);
     this.feedback = signal(null, ...ngDevMode ? [{ debugName: "feedback" }] : []);
     this.isSubmitting = signal(false, ...ngDevMode ? [{ debugName: "isSubmitting" }] : []);
+    this.signInPasswordVisible = signal(false, ...ngDevMode ? [{ debugName: "signInPasswordVisible" }] : []);
+    this.signUpPasswordVisible = signal(false, ...ngDevMode ? [{ debugName: "signUpPasswordVisible" }] : []);
+    this.signUpConfirmPasswordVisible = signal(false, ...ngDevMode ? [{ debugName: "signUpConfirmPasswordVisible" }] : []);
     this.signInForm = this.formBuilder.nonNullable.group({
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required]]
@@ -7359,7 +7442,10 @@ var _AuthModalComponent = class _AuthModalComponent {
     this.signUpForm = this.formBuilder.nonNullable.group({
       displayName: ["", [Validators.required, Validators.minLength(2)]],
       email: ["", [Validators.required, Validators.email]],
-      password: ["", [Validators.required, Validators.minLength(8)]]
+      password: ["", [Validators.required, Validators.minLength(8)]],
+      confirmPassword: ["", [Validators.required]]
+    }, {
+      validators: [_AuthModalComponent.passwordsMatchValidator]
     });
   }
   onEscape() {
@@ -7374,7 +7460,30 @@ var _AuthModalComponent = class _AuthModalComponent {
   }
   switchMode(mode) {
     this.feedback.set(null);
+    this.signInPasswordVisible.set(false);
+    this.signUpPasswordVisible.set(false);
+    this.signUpConfirmPasswordVisible.set(false);
     this.modal.switchMode(mode);
+  }
+  togglePasswordVisibility(mode) {
+    if (mode === "signin") {
+      this.signInPasswordVisible.update((value) => !value);
+      return;
+    }
+    if (mode === "signup-confirm") {
+      this.signUpConfirmPasswordVisible.update((value) => !value);
+      return;
+    }
+    this.signUpPasswordVisible.update((value) => !value);
+  }
+  requestPasswordReset() {
+    const emailControl = this.signInForm.controls.email;
+    if (emailControl.invalid) {
+      emailControl.markAsTouched();
+      this.feedback.set("Enter a valid email to receive a password reset link.");
+      return;
+    }
+    this.feedback.set(`Password reset link sent to ${emailControl.getRawValue()}.`);
   }
   signIn() {
     if (this.signInForm.invalid) {
@@ -7390,7 +7499,7 @@ var _AuthModalComponent = class _AuthModalComponent {
   signUp() {
     if (this.signUpForm.invalid) {
       this.signUpForm.markAllAsTouched();
-      this.feedback.set("Add your name, a valid email, and a password with at least 8 characters.");
+      this.feedback.set("Add your name, a valid email, and matching passwords with at least 8 characters.");
       return;
     }
     this.isSubmitting.set(true);
@@ -7422,6 +7531,14 @@ var _AuthModalComponent = class _AuthModalComponent {
       this.auth.upgradeToPro();
     }
   }
+  static passwordsMatchValidator(control) {
+    const password = control.get("password")?.value;
+    const confirmPassword = control.get("confirmPassword")?.value;
+    if (!password || !confirmPassword) {
+      return null;
+    }
+    return password === confirmPassword ? null : { passwordMismatch: true };
+  }
 };
 _AuthModalComponent.\u0275fac = function AuthModalComponent_Factory(__ngFactoryType__) {
   return new (__ngFactoryType__ || _AuthModalComponent)();
@@ -7432,14 +7549,14 @@ _AuthModalComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
       return ctx.onEscape();
     }, \u0275\u0275resolveDocument);
   }
-}, decls: 1, vars: 1, consts: [[1, "auth-modal-backdrop", 3, "click"], ["role", "dialog", "aria-modal", "true", "aria-labelledby", "auth-modal-title", "aria-describedby", "auth-modal-description", 1, "auth-modal", "surface-card"], ["type", "button", "aria-label", "Close auth modal", 1, "auth-modal__close", "icon-button", 3, "click"], [1, "material-symbols-outlined"], [1, "auth-modal__eyebrow", "text-label"], ["id", "auth-modal-title", 1, "page-title", "auth-modal__title"], ["id", "auth-modal-description", 1, "auth-modal__description"], ["aria-label", "Authentication mode", 1, "auth-modal__tabs"], ["type", "button", 1, "auth-modal__tab", 3, "click"], [1, "auth-modal__socials"], ["type", "button", 1, "auth-modal__social-button", 3, "click"], ["aria-hidden", "true", 1, "material-symbols-outlined"], ["aria-hidden", "true", 1, "auth-modal__divider"], [1, "auth-form", 3, "formGroup"], ["aria-live", "polite", 1, "auth-modal__feedback"], [1, "auth-form", 3, "ngSubmit", "formGroup"], [1, "auth-form__field"], [1, "text-label"], ["type", "email", "formControlName", "email", "placeholder", "name@example.com"], ["type", "password", "formControlName", "password", "placeholder", "Your password"], ["type", "submit", 1, "auth-form__submit", 3, "disabled"], ["type", "text", "formControlName", "displayName", "placeholder", "How people will know you"], ["type", "password", "formControlName", "password", "placeholder", "At least 8 characters"]], template: function AuthModalComponent_Template(rf, ctx) {
+}, decls: 1, vars: 1, consts: [[1, "auth-modal-backdrop", 3, "click"], ["role", "dialog", "aria-modal", "true", "aria-labelledby", "auth-modal-title", "aria-describedby", "auth-modal-description", 1, "auth-modal", "surface-card"], ["type", "button", "aria-label", "Close auth modal", 1, "auth-modal__close", "icon-button", 3, "click"], [1, "material-symbols-outlined"], [1, "auth-modal__eyebrow", "text-label"], ["id", "auth-modal-title", 1, "page-title", "auth-modal__title"], ["id", "auth-modal-description", 1, "auth-modal__description"], ["aria-label", "Authentication mode", 1, "auth-modal__tabs"], ["type", "button", 1, "auth-modal__tab", 3, "click"], [1, "auth-modal__socials"], ["type", "button", 1, "auth-modal__social-button", 3, "click"], ["aria-hidden", "true", 1, "material-symbols-outlined"], ["aria-hidden", "true", 1, "auth-modal__divider"], [1, "auth-modal__body"], [1, "auth-form", 3, "formGroup"], ["aria-live", "polite", 1, "auth-modal__feedback"], [1, "auth-form", 3, "ngSubmit", "formGroup"], [1, "auth-form__field"], [1, "text-label"], ["type", "email", "formControlName", "email", "placeholder", "name@example.com", "autocomplete", "email"], [1, "auth-form__input-wrap"], ["formControlName", "password", "placeholder", "Your password", "autocomplete", "current-password", 1, "auth-form__input", "auth-form__input--with-toggle", 3, "type"], ["type", "button", 1, "auth-form__toggle", 3, "click"], ["type", "button", 1, "auth-form__helper-link", 3, "click"], ["type", "submit", 1, "auth-form__submit", 3, "disabled"], ["type", "text", "formControlName", "displayName", "placeholder", "How people will know you", "autocomplete", "name"], ["formControlName", "password", "placeholder", "At least 8 characters", "autocomplete", "new-password", 1, "auth-form__input", "auth-form__input--with-toggle", 3, "type"], ["formControlName", "confirmPassword", "placeholder", "Repeat your password", "autocomplete", "new-password", 1, "auth-form__input", "auth-form__input--with-toggle", 3, "type"]], template: function AuthModalComponent_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275conditionalCreate(0, AuthModalComponent_Conditional_0_Template, 31, 8);
+    \u0275\u0275conditionalCreate(0, AuthModalComponent_Conditional_0_Template, 32, 8);
   }
   if (rf & 2) {
     \u0275\u0275conditional(ctx.modal.state().isOpen ? 0 : -1);
   }
-}, dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName], styles: ['\n\n[_nghost-%COMP%] {\n  display: contents;\n}\n.auth-modal-backdrop[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 90;\n  background: rgba(0, 0, 0, 0.55);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.auth-modal[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 91;\n  inline-size: min(32rem, 100vw - 2rem);\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1rem;\n}\n.auth-modal__close[_ngcontent-%COMP%] {\n  justify-self: end;\n}\n.auth-modal__eyebrow[_ngcontent-%COMP%], \n.auth-modal__description[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.auth-modal__eyebrow[_ngcontent-%COMP%] {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.14em;\n}\n.auth-modal__title[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: clamp(1.8rem, 3vw, 2.4rem);\n}\n.auth-modal__description[_ngcontent-%COMP%] {\n  color: var(--color-on-surface-variant);\n  line-height: 1.6;\n}\n.auth-modal__tabs[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  padding: 0.25rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n}\n.auth-modal__tab[_ngcontent-%COMP%] {\n  min-block-size: 2.9rem;\n  border-radius: var(--radius-pill);\n  font-weight: 700;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__tab--active[_ngcontent-%COMP%] {\n  background: var(--color-primary);\n  color: var(--color-on-primary-container);\n}\n.auth-modal__socials[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.75rem;\n}\n.auth-modal__social-button[_ngcontent-%COMP%], \n.auth-form__submit[_ngcontent-%COMP%] {\n  min-block-size: 3rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.55rem;\n  font-weight: 800;\n}\n.auth-modal__social-button[_ngcontent-%COMP%] {\n  border: 1px solid rgba(76, 214, 251, 0.22);\n  background: rgba(76, 214, 251, 0.08);\n  color: var(--color-tertiary);\n}\n.auth-modal__divider[_ngcontent-%COMP%] {\n  position: relative;\n  text-align: center;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__divider[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  inset-block-start: 50%;\n  inset-inline: 0;\n  block-size: 1px;\n  background: rgba(172, 135, 143, 0.2);\n}\n.auth-modal__divider[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  padding-inline: 0.75rem;\n  background: var(--color-surface-container-high);\n}\n.auth-form[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.9rem;\n}\n.auth-form__field[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.45rem;\n}\n.auth-form__field[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: var(--color-on-surface-variant);\n}\n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  inline-size: 100%;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border: 1px solid rgba(172, 135, 143, 0.24);\n  border-radius: var(--radius-md);\n  background: rgba(14, 14, 14, 0.72);\n  color: var(--color-on-surface);\n}\n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus-visible {\n  outline: 2px solid rgba(76, 214, 251, 0.4);\n  outline-offset: 2px;\n}\n.auth-form__field[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  color: var(--color-error);\n}\n.auth-form__submit[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.auth-form__submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.72;\n  cursor: progress;\n}\n.auth-modal__feedback[_ngcontent-%COMP%] {\n  margin: 0;\n  padding: 0.85rem 1rem;\n  border-radius: var(--radius-md);\n  background: rgba(255, 180, 171, 0.08);\n  color: var(--color-error);\n}\n@media (max-width: 767px) {\n  .auth-modal[_ngcontent-%COMP%] {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-inline-size: none;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n}\n/*# sourceMappingURL=auth-modal.component.css.map */'], changeDetection: 0 });
+}, dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName], styles: ['\n\n[_nghost-%COMP%] {\n  display: contents;\n}\n.auth-modal-backdrop[_ngcontent-%COMP%] {\n  position: fixed;\n  inset: 0;\n  z-index: 90;\n  background: rgba(0, 0, 0, 0.55);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.auth-modal[_ngcontent-%COMP%] {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 91;\n  inline-size: min(32rem, 100vw - 2rem);\n  min-block-size: 42rem;\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1rem;\n  align-content: start;\n}\n.auth-modal__close[_ngcontent-%COMP%] {\n  justify-self: end;\n}\n.auth-modal__eyebrow[_ngcontent-%COMP%], \n.auth-modal__description[_ngcontent-%COMP%] {\n  margin: 0;\n}\n.auth-modal__eyebrow[_ngcontent-%COMP%] {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.14em;\n}\n.auth-modal__title[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: clamp(1.8rem, 3vw, 2.4rem);\n}\n.auth-modal__description[_ngcontent-%COMP%] {\n  color: var(--color-on-surface-variant);\n  line-height: 1.6;\n}\n.auth-modal__tabs[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  padding: 0.25rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n}\n.auth-modal__tab[_ngcontent-%COMP%] {\n  min-block-size: 2.9rem;\n  border-radius: var(--radius-pill);\n  font-weight: 700;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__tab--active[_ngcontent-%COMP%] {\n  background: var(--color-primary);\n  color: var(--color-on-primary-container);\n}\n.auth-modal__socials[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.75rem;\n}\n.auth-modal__social-button[_ngcontent-%COMP%], \n.auth-form__submit[_ngcontent-%COMP%] {\n  min-block-size: 3rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.55rem;\n  font-weight: 800;\n}\n.auth-modal__social-button[_ngcontent-%COMP%] {\n  border: 1px solid rgba(76, 214, 251, 0.22);\n  background: rgba(76, 214, 251, 0.08);\n  color: var(--color-tertiary);\n}\n.auth-modal__divider[_ngcontent-%COMP%] {\n  position: relative;\n  text-align: center;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__divider[_ngcontent-%COMP%]::before {\n  content: "";\n  position: absolute;\n  inset-block-start: 50%;\n  inset-inline: 0;\n  block-size: 1px;\n  background: rgba(172, 135, 143, 0.2);\n}\n.auth-modal__divider[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  position: relative;\n  padding-inline: 0.75rem;\n  background: var(--color-surface-container-high);\n}\n.auth-form[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.9rem;\n}\n.auth-modal__body[_ngcontent-%COMP%] {\n  min-block-size: 18rem;\n}\n.auth-form__field[_ngcontent-%COMP%] {\n  display: grid;\n  gap: 0.45rem;\n}\n.auth-form__field[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  color: var(--color-on-surface-variant);\n}\n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  inline-size: 100%;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border: 1px solid rgba(172, 135, 143, 0.24);\n  border-radius: var(--radius-md);\n  background: rgba(14, 14, 14, 0.72);\n  color: var(--color-on-surface);\n}\n.auth-form__input-wrap[_ngcontent-%COMP%] {\n  position: relative;\n}\n.auth-form__input[_ngcontent-%COMP%] {\n  inline-size: 100%;\n}\n.auth-form__input--with-toggle[_ngcontent-%COMP%] {\n  padding-inline-end: 3.5rem;\n}\n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:-webkit-autofill, \n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:-webkit-autofill:hover, \n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:-webkit-autofill:focus {\n  -webkit-text-fill-color: var(--color-on-surface);\n  -webkit-box-shadow: 0 0 0 1000px rgba(14, 14, 14, 0.96) inset;\n  transition: background-color 9999s ease-out 0s;\n  caret-color: var(--color-on-surface);\n}\n.auth-form__field[_ngcontent-%COMP%]   input[_ngcontent-%COMP%]:focus-visible {\n  outline: 2px solid rgba(76, 214, 251, 0.4);\n  outline-offset: 2px;\n}\n.auth-form__toggle[_ngcontent-%COMP%], \n.auth-form__helper-link[_ngcontent-%COMP%] {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.82rem/1.2 "Inter", sans-serif;\n  text-align: start;\n}\n.auth-form__toggle[_ngcontent-%COMP%] {\n  position: absolute;\n  inset-inline-end: 0.4rem;\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  inline-size: 2.5rem;\n  block-size: 2.5rem;\n  display: inline-grid;\n  place-items: center;\n  align-items: center;\n  justify-content: center;\n  border-radius: var(--radius-md);\n  background: transparent;\n}\n.auth-form__toggle[_ngcontent-%COMP%]   .material-symbols-outlined[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n}\n.auth-form__helper-link[_ngcontent-%COMP%] {\n  justify-self: start;\n}\n.auth-form__field[_ngcontent-%COMP%]   small[_ngcontent-%COMP%] {\n  color: var(--color-error);\n}\n.auth-form__submit[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.auth-form__submit[_ngcontent-%COMP%]:disabled {\n  opacity: 0.72;\n  cursor: progress;\n}\n.auth-modal__feedback[_ngcontent-%COMP%] {\n  margin: 0;\n  padding: 0.85rem 1rem;\n  border-radius: var(--radius-md);\n  background: rgba(255, 180, 171, 0.08);\n  color: var(--color-error);\n}\n@media (max-width: 767px) {\n  .auth-modal[_ngcontent-%COMP%] {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-inline-size: none;\n    min-block-size: auto;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n  .auth-modal__body[_ngcontent-%COMP%] {\n    min-block-size: auto;\n  }\n}\n/*# sourceMappingURL=auth-modal.component.css.map */'], changeDetection: 0 });
 var AuthModalComponent = _AuthModalComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AuthModalComponent, [{
@@ -7494,66 +7611,128 @@ var AuthModalComponent = _AuthModalComponent;
       <span>or use email</span>
     </div>
 
-    @if (modal.state().mode === 'signin') {
-      <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
-        <label class="auth-form__field">
-          <span class="text-label">Email</span>
-          <input type="email" formControlName="email" placeholder="name@example.com" />
-          @if (signInForm.controls.email.invalid && signInForm.controls.email.touched) {
-            <small>Enter a valid email address.</small>
-          }
-        </label>
+    <div class="auth-modal__body">
+      @if (modal.state().mode === 'signin') {
+        <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+          <label class="auth-form__field">
+            <span class="text-label">Email</span>
+            <input type="email" formControlName="email" placeholder="name@example.com" autocomplete="email" />
+            @if (signInForm.controls.email.invalid && signInForm.controls.email.touched) {
+              <small>Enter a valid email address.</small>
+            }
+          </label>
 
-        <label class="auth-form__field">
-          <span class="text-label">Password</span>
-          <input type="password" formControlName="password" placeholder="Your password" />
-          @if (signInForm.controls.password.invalid && signInForm.controls.password.touched) {
-            <small>Password is required.</small>
-          }
-        </label>
+          <label class="auth-form__field">
+            <span class="text-label">Password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signInPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="password"
+                placeholder="Your password"
+                autocomplete="current-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signInPasswordVisible() ? 'Hide password' : 'Show password'"
+                (click)="togglePasswordVisibility('signin')">
+                <span class="material-symbols-outlined">
+                  {{ signInPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signInForm.controls.password.invalid && signInForm.controls.password.touched) {
+              <small>Password is required.</small>
+            }
+          </label>
 
-        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Signing in...' : 'Sign in' }}
-        </button>
-      </form>
-    } @else {
-      <form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
-        <label class="auth-form__field">
-          <span class="text-label">Display name</span>
-          <input type="text" formControlName="displayName" placeholder="How people will know you" />
-          @if (signUpForm.controls.displayName.invalid && signUpForm.controls.displayName.touched) {
-            <small>Add at least 2 characters.</small>
-          }
-        </label>
+          <button type="button" class="auth-form__helper-link" (click)="requestPasswordReset()">Password dimenticata?</button>
 
-        <label class="auth-form__field">
-          <span class="text-label">Email</span>
-          <input type="email" formControlName="email" placeholder="name@example.com" />
-          @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
-            <small>Enter a valid email address.</small>
-          }
-        </label>
+          <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+            {{ isSubmitting() ? 'Signing in...' : 'Sign in' }}
+          </button>
+        </form>
+      } @else {
+        <form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+          <label class="auth-form__field">
+            <span class="text-label">Display name</span>
+            <input type="text" formControlName="displayName" placeholder="How people will know you" autocomplete="name" />
+            @if (signUpForm.controls.displayName.invalid && signUpForm.controls.displayName.touched) {
+              <small>Add at least 2 characters.</small>
+            }
+          </label>
 
-        <label class="auth-form__field">
-          <span class="text-label">Password</span>
-          <input type="password" formControlName="password" placeholder="At least 8 characters" />
-          @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
-            <small>Use at least 8 characters.</small>
-          }
-        </label>
+          <label class="auth-form__field">
+            <span class="text-label">Email</span>
+            <input type="email" formControlName="email" placeholder="name@example.com" autocomplete="email" />
+            @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
+              <small>Enter a valid email address.</small>
+            }
+          </label>
 
-        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
-        </button>
-      </form>
-    }
+          <label class="auth-form__field">
+            <span class="text-label">Password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signUpPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="password"
+                placeholder="At least 8 characters"
+                autocomplete="new-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signUpPasswordVisible() ? 'Hide password' : 'Show password'"
+                (click)="togglePasswordVisibility('signup')">
+                <span class="material-symbols-outlined">
+                  {{ signUpPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
+              <small>Use at least 8 characters.</small>
+            }
+          </label>
+
+          <label class="auth-form__field">
+            <span class="text-label">Confirm password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signUpConfirmPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="confirmPassword"
+                placeholder="Repeat your password"
+                autocomplete="new-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signUpConfirmPasswordVisible() ? 'Hide password confirmation' : 'Show password confirmation'"
+                (click)="togglePasswordVisibility('signup-confirm')">
+                <span class="material-symbols-outlined">
+                  {{ signUpConfirmPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signUpForm.controls.confirmPassword.invalid && signUpForm.controls.confirmPassword.touched) {
+              <small>Confirm your password.</small>
+            } @else if (signUpForm.hasError('passwordMismatch') && signUpForm.controls.confirmPassword.touched) {
+              <small>Passwords must match.</small>
+            }
+          </label>
+
+          <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+            {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
+          </button>
+        </form>
+      }
+    </div>
 
     @if (feedback(); as message) {
       <p class="auth-modal__feedback" aria-live="polite">{{ message }}</p>
     }
   </section>
 }
-`, styles: ['/* src/app/features/auth/components/auth-modal/auth-modal.component.scss */\n:host {\n  display: contents;\n}\n.auth-modal-backdrop {\n  position: fixed;\n  inset: 0;\n  z-index: 90;\n  background: rgba(0, 0, 0, 0.55);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.auth-modal {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 91;\n  inline-size: min(32rem, 100vw - 2rem);\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1rem;\n}\n.auth-modal__close {\n  justify-self: end;\n}\n.auth-modal__eyebrow,\n.auth-modal__description {\n  margin: 0;\n}\n.auth-modal__eyebrow {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.14em;\n}\n.auth-modal__title {\n  margin: 0;\n  font-size: clamp(1.8rem, 3vw, 2.4rem);\n}\n.auth-modal__description {\n  color: var(--color-on-surface-variant);\n  line-height: 1.6;\n}\n.auth-modal__tabs {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  padding: 0.25rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n}\n.auth-modal__tab {\n  min-block-size: 2.9rem;\n  border-radius: var(--radius-pill);\n  font-weight: 700;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__tab--active {\n  background: var(--color-primary);\n  color: var(--color-on-primary-container);\n}\n.auth-modal__socials {\n  display: grid;\n  gap: 0.75rem;\n}\n.auth-modal__social-button,\n.auth-form__submit {\n  min-block-size: 3rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.55rem;\n  font-weight: 800;\n}\n.auth-modal__social-button {\n  border: 1px solid rgba(76, 214, 251, 0.22);\n  background: rgba(76, 214, 251, 0.08);\n  color: var(--color-tertiary);\n}\n.auth-modal__divider {\n  position: relative;\n  text-align: center;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__divider::before {\n  content: "";\n  position: absolute;\n  inset-block-start: 50%;\n  inset-inline: 0;\n  block-size: 1px;\n  background: rgba(172, 135, 143, 0.2);\n}\n.auth-modal__divider span {\n  position: relative;\n  padding-inline: 0.75rem;\n  background: var(--color-surface-container-high);\n}\n.auth-form {\n  display: grid;\n  gap: 0.9rem;\n}\n.auth-form__field {\n  display: grid;\n  gap: 0.45rem;\n}\n.auth-form__field span {\n  color: var(--color-on-surface-variant);\n}\n.auth-form__field input {\n  inline-size: 100%;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border: 1px solid rgba(172, 135, 143, 0.24);\n  border-radius: var(--radius-md);\n  background: rgba(14, 14, 14, 0.72);\n  color: var(--color-on-surface);\n}\n.auth-form__field input:focus-visible {\n  outline: 2px solid rgba(76, 214, 251, 0.4);\n  outline-offset: 2px;\n}\n.auth-form__field small {\n  color: var(--color-error);\n}\n.auth-form__submit {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.auth-form__submit:disabled {\n  opacity: 0.72;\n  cursor: progress;\n}\n.auth-modal__feedback {\n  margin: 0;\n  padding: 0.85rem 1rem;\n  border-radius: var(--radius-md);\n  background: rgba(255, 180, 171, 0.08);\n  color: var(--color-error);\n}\n@media (max-width: 767px) {\n  .auth-modal {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-inline-size: none;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n}\n/*# sourceMappingURL=auth-modal.component.css.map */\n'] }]
+`, styles: ['/* src/app/features/auth/components/auth-modal/auth-modal.component.scss */\n:host {\n  display: contents;\n}\n.auth-modal-backdrop {\n  position: fixed;\n  inset: 0;\n  z-index: 90;\n  background: rgba(0, 0, 0, 0.55);\n  -webkit-backdrop-filter: blur(8px);\n  backdrop-filter: blur(8px);\n}\n.auth-modal {\n  position: fixed;\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  z-index: 91;\n  inline-size: min(32rem, 100vw - 2rem);\n  min-block-size: 42rem;\n  padding: 1.5rem;\n  transform: translate(-50%, -50%);\n  display: grid;\n  gap: 1rem;\n  align-content: start;\n}\n.auth-modal__close {\n  justify-self: end;\n}\n.auth-modal__eyebrow,\n.auth-modal__description {\n  margin: 0;\n}\n.auth-modal__eyebrow {\n  color: var(--color-secondary);\n  text-transform: uppercase;\n  letter-spacing: 0.14em;\n}\n.auth-modal__title {\n  margin: 0;\n  font-size: clamp(1.8rem, 3vw, 2.4rem);\n}\n.auth-modal__description {\n  color: var(--color-on-surface-variant);\n  line-height: 1.6;\n}\n.auth-modal__tabs {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  padding: 0.25rem;\n  border-radius: var(--radius-pill);\n  background: rgba(255, 255, 255, 0.05);\n}\n.auth-modal__tab {\n  min-block-size: 2.9rem;\n  border-radius: var(--radius-pill);\n  font-weight: 700;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__tab--active {\n  background: var(--color-primary);\n  color: var(--color-on-primary-container);\n}\n.auth-modal__socials {\n  display: grid;\n  gap: 0.75rem;\n}\n.auth-modal__social-button,\n.auth-form__submit {\n  min-block-size: 3rem;\n  border-radius: var(--radius-pill);\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.55rem;\n  font-weight: 800;\n}\n.auth-modal__social-button {\n  border: 1px solid rgba(76, 214, 251, 0.22);\n  background: rgba(76, 214, 251, 0.08);\n  color: var(--color-tertiary);\n}\n.auth-modal__divider {\n  position: relative;\n  text-align: center;\n  color: var(--color-on-surface-variant);\n}\n.auth-modal__divider::before {\n  content: "";\n  position: absolute;\n  inset-block-start: 50%;\n  inset-inline: 0;\n  block-size: 1px;\n  background: rgba(172, 135, 143, 0.2);\n}\n.auth-modal__divider span {\n  position: relative;\n  padding-inline: 0.75rem;\n  background: var(--color-surface-container-high);\n}\n.auth-form {\n  display: grid;\n  gap: 0.9rem;\n}\n.auth-modal__body {\n  min-block-size: 18rem;\n}\n.auth-form__field {\n  display: grid;\n  gap: 0.45rem;\n}\n.auth-form__field span {\n  color: var(--color-on-surface-variant);\n}\n.auth-form__field input {\n  inline-size: 100%;\n  min-block-size: 3rem;\n  padding-inline: 1rem;\n  border: 1px solid rgba(172, 135, 143, 0.24);\n  border-radius: var(--radius-md);\n  background: rgba(14, 14, 14, 0.72);\n  color: var(--color-on-surface);\n}\n.auth-form__input-wrap {\n  position: relative;\n}\n.auth-form__input {\n  inline-size: 100%;\n}\n.auth-form__input--with-toggle {\n  padding-inline-end: 3.5rem;\n}\n.auth-form__field input:-webkit-autofill,\n.auth-form__field input:-webkit-autofill:hover,\n.auth-form__field input:-webkit-autofill:focus {\n  -webkit-text-fill-color: var(--color-on-surface);\n  -webkit-box-shadow: 0 0 0 1000px rgba(14, 14, 14, 0.96) inset;\n  transition: background-color 9999s ease-out 0s;\n  caret-color: var(--color-on-surface);\n}\n.auth-form__field input:focus-visible {\n  outline: 2px solid rgba(76, 214, 251, 0.4);\n  outline-offset: 2px;\n}\n.auth-form__toggle,\n.auth-form__helper-link {\n  padding: 0;\n  color: var(--color-tertiary);\n  font: 700 0.82rem/1.2 "Inter", sans-serif;\n  text-align: start;\n}\n.auth-form__toggle {\n  position: absolute;\n  inset-inline-end: 0.4rem;\n  inset-block-start: 50%;\n  transform: translateY(-50%);\n  inline-size: 2.5rem;\n  block-size: 2.5rem;\n  display: inline-grid;\n  place-items: center;\n  align-items: center;\n  justify-content: center;\n  border-radius: var(--radius-md);\n  background: transparent;\n}\n.auth-form__toggle .material-symbols-outlined {\n  font-size: 1.2rem;\n}\n.auth-form__helper-link {\n  justify-self: start;\n}\n.auth-form__field small {\n  color: var(--color-error);\n}\n.auth-form__submit {\n  background:\n    linear-gradient(\n      135deg,\n      var(--color-primary),\n      #ffd9e1);\n  color: var(--color-on-primary-container);\n}\n.auth-form__submit:disabled {\n  opacity: 0.72;\n  cursor: progress;\n}\n.auth-modal__feedback {\n  margin: 0;\n  padding: 0.85rem 1rem;\n  border-radius: var(--radius-md);\n  background: rgba(255, 180, 171, 0.08);\n  color: var(--color-error);\n}\n@media (max-width: 767px) {\n  .auth-modal {\n    inset-block-end: 0;\n    inset-block-start: auto;\n    inline-size: 100%;\n    max-inline-size: none;\n    min-block-size: auto;\n    border-end-start-radius: 0;\n    border-end-end-radius: 0;\n    transform: translate(-50%, 0);\n  }\n  .auth-modal__body {\n    min-block-size: auto;\n  }\n}\n/*# sourceMappingURL=auth-modal.component.css.map */\n'] }]
   }], null, { onEscape: [{
     type: HostListener,
     args: ["document:keydown.escape"]

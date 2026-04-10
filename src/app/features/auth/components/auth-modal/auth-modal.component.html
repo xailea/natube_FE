@@ -48,59 +48,121 @@
       <span>or use email</span>
     </div>
 
-    @if (modal.state().mode === 'signin') {
-      <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
-        <label class="auth-form__field">
-          <span class="text-label">Email</span>
-          <input type="email" formControlName="email" placeholder="name@example.com" />
-          @if (signInForm.controls.email.invalid && signInForm.controls.email.touched) {
-            <small>Enter a valid email address.</small>
-          }
-        </label>
+    <div class="auth-modal__body">
+      @if (modal.state().mode === 'signin') {
+        <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="signIn()">
+          <label class="auth-form__field">
+            <span class="text-label">Email</span>
+            <input type="email" formControlName="email" placeholder="name@example.com" autocomplete="email" />
+            @if (signInForm.controls.email.invalid && signInForm.controls.email.touched) {
+              <small>Enter a valid email address.</small>
+            }
+          </label>
 
-        <label class="auth-form__field">
-          <span class="text-label">Password</span>
-          <input type="password" formControlName="password" placeholder="Your password" />
-          @if (signInForm.controls.password.invalid && signInForm.controls.password.touched) {
-            <small>Password is required.</small>
-          }
-        </label>
+          <label class="auth-form__field">
+            <span class="text-label">Password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signInPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="password"
+                placeholder="Your password"
+                autocomplete="current-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signInPasswordVisible() ? 'Hide password' : 'Show password'"
+                (click)="togglePasswordVisibility('signin')">
+                <span class="material-symbols-outlined">
+                  {{ signInPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signInForm.controls.password.invalid && signInForm.controls.password.touched) {
+              <small>Password is required.</small>
+            }
+          </label>
 
-        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Signing in...' : 'Sign in' }}
-        </button>
-      </form>
-    } @else {
-      <form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
-        <label class="auth-form__field">
-          <span class="text-label">Display name</span>
-          <input type="text" formControlName="displayName" placeholder="How people will know you" />
-          @if (signUpForm.controls.displayName.invalid && signUpForm.controls.displayName.touched) {
-            <small>Add at least 2 characters.</small>
-          }
-        </label>
+          <button type="button" class="auth-form__helper-link" (click)="requestPasswordReset()">Password dimenticata?</button>
 
-        <label class="auth-form__field">
-          <span class="text-label">Email</span>
-          <input type="email" formControlName="email" placeholder="name@example.com" />
-          @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
-            <small>Enter a valid email address.</small>
-          }
-        </label>
+          <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+            {{ isSubmitting() ? 'Signing in...' : 'Sign in' }}
+          </button>
+        </form>
+      } @else {
+        <form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+          <label class="auth-form__field">
+            <span class="text-label">Display name</span>
+            <input type="text" formControlName="displayName" placeholder="How people will know you" autocomplete="name" />
+            @if (signUpForm.controls.displayName.invalid && signUpForm.controls.displayName.touched) {
+              <small>Add at least 2 characters.</small>
+            }
+          </label>
 
-        <label class="auth-form__field">
-          <span class="text-label">Password</span>
-          <input type="password" formControlName="password" placeholder="At least 8 characters" />
-          @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
-            <small>Use at least 8 characters.</small>
-          }
-        </label>
+          <label class="auth-form__field">
+            <span class="text-label">Email</span>
+            <input type="email" formControlName="email" placeholder="name@example.com" autocomplete="email" />
+            @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
+              <small>Enter a valid email address.</small>
+            }
+          </label>
 
-        <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
-          {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
-        </button>
-      </form>
-    }
+          <label class="auth-form__field">
+            <span class="text-label">Password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signUpPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="password"
+                placeholder="At least 8 characters"
+                autocomplete="new-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signUpPasswordVisible() ? 'Hide password' : 'Show password'"
+                (click)="togglePasswordVisibility('signup')">
+                <span class="material-symbols-outlined">
+                  {{ signUpPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
+              <small>Use at least 8 characters.</small>
+            }
+          </label>
+
+          <label class="auth-form__field">
+            <span class="text-label">Confirm password</span>
+            <div class="auth-form__input-wrap">
+              <input
+                [type]="signUpConfirmPasswordVisible() ? 'text' : 'password'"
+                class="auth-form__input auth-form__input--with-toggle"
+                formControlName="confirmPassword"
+                placeholder="Repeat your password"
+                autocomplete="new-password" />
+              <button
+                type="button"
+                class="auth-form__toggle"
+                [attr.aria-label]="signUpConfirmPasswordVisible() ? 'Hide password confirmation' : 'Show password confirmation'"
+                (click)="togglePasswordVisibility('signup-confirm')">
+                <span class="material-symbols-outlined">
+                  {{ signUpConfirmPasswordVisible() ? 'visibility_off' : 'visibility' }}
+                </span>
+              </button>
+            </div>
+            @if (signUpForm.controls.confirmPassword.invalid && signUpForm.controls.confirmPassword.touched) {
+              <small>Confirm your password.</small>
+            } @else if (signUpForm.hasError('passwordMismatch') && signUpForm.controls.confirmPassword.touched) {
+              <small>Passwords must match.</small>
+            }
+          </label>
+
+          <button type="submit" class="auth-form__submit" [disabled]="isSubmitting()">
+            {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
+          </button>
+        </form>
+      }
+    </div>
 
     @if (feedback(); as message) {
       <p class="auth-modal__feedback" aria-live="polite">{{ message }}</p>

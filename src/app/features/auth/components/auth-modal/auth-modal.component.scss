@@ -16,10 +16,12 @@
   inset-inline-start: 50%;
   z-index: 91;
   inline-size: min(32rem, calc(100vw - 2rem));
+  min-block-size: 42rem;
   padding: 1.5rem;
   transform: translate(-50%, -50%);
   display: grid;
   gap: 1rem;
+  align-content: start;
 }
 
 .auth-modal__close {
@@ -115,6 +117,10 @@
   gap: 0.9rem;
 }
 
+.auth-modal__body {
+  min-block-size: 18rem;
+}
+
 .auth-form__field {
   display: grid;
   gap: 0.45rem;
@@ -134,9 +140,61 @@
   color: var(--color-on-surface);
 }
 
+.auth-form__input-wrap {
+  position: relative;
+}
+
+.auth-form__input {
+  inline-size: 100%;
+}
+
+.auth-form__input--with-toggle {
+  padding-inline-end: 3.5rem;
+}
+
+.auth-form__field input:-webkit-autofill,
+.auth-form__field input:-webkit-autofill:hover,
+.auth-form__field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-on-surface);
+  -webkit-box-shadow: 0 0 0 1000px rgba(14, 14, 14, 0.96) inset;
+  transition: background-color 9999s ease-out 0s;
+  caret-color: var(--color-on-surface);
+}
+
 .auth-form__field input:focus-visible {
   outline: 2px solid rgba(76, 214, 251, 0.4);
   outline-offset: 2px;
+}
+
+.auth-form__toggle,
+.auth-form__helper-link {
+  padding: 0;
+  color: var(--color-tertiary);
+  font: 700 0.82rem/1.2 'Inter', sans-serif;
+  text-align: start;
+}
+
+.auth-form__toggle {
+  position: absolute;
+  inset-inline-end: 0.4rem;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  display: inline-grid;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: transparent;
+}
+
+.auth-form__toggle .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+.auth-form__helper-link {
+  justify-self: start;
 }
 
 .auth-form__field small {
@@ -167,8 +225,13 @@
     inset-block-start: auto;
     inline-size: 100%;
     max-inline-size: none;
+    min-block-size: auto;
     border-end-start-radius: 0;
     border-end-end-radius: 0;
     transform: translate(-50%, 0);
+  }
+
+  .auth-modal__body {
+    min-block-size: auto;
   }
 }
